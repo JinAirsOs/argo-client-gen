@@ -7,10 +7,10 @@ Sequence expands a workflow step into numeric range
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **String** | Count is number of elements in the sequence (default: 0). Not to be used with end |  [optional]
-**end** | **String** | Number at which to end the sequence (default: 0). Not to be used with Count |  [optional]
+**count** | **String** |  |  [optional]
+**end** | **String** |  |  [optional]
 **format** | **String** | Format is a printf format string to format the value in the sequence |  [optional]
-**start** | **String** | Number at which to start the sequence (default: 0) |  [optional]
+**start** | **String** |  |  [optional]
 
 
 
