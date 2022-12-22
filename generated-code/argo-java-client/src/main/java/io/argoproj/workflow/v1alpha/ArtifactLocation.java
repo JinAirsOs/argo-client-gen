@@ -13,25 +13,11 @@
 
 package io.argoproj.workflow.v1alpha;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.argoproj.workflow.v1alpha.ArtifactoryArtifact;
-import io.argoproj.workflow.v1alpha.AzureArtifact;
-import io.argoproj.workflow.v1alpha.GCSArtifact;
-import io.argoproj.workflow.v1alpha.GitArtifact;
-import io.argoproj.workflow.v1alpha.HDFSArtifact;
-import io.argoproj.workflow.v1alpha.HTTPArtifact;
-import io.argoproj.workflow.v1alpha.OSSArtifact;
-import io.argoproj.workflow.v1alpha.RawArtifact;
-import io.argoproj.workflow.v1alpha.S3Artifact;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+
+import java.util.Objects;
 
 /**
  * ArtifactLocation describes a location for a single or multiple artifacts. It is used as single artifact in the context of inputs/outputs (e.g. outputs.artifacts.artname). It is also used to describe the location of multiple artifacts such as the archive location of a single workflow step, which the executor will use as a default location to store its files.

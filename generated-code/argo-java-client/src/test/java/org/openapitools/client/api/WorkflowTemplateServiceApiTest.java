@@ -13,20 +13,12 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import io.argoproj.workflow.v1alpha.Error;
-import io.argoproj.workflow.v1alpha.WorkflowTemplate;
-import io.argoproj.workflow.v1alpha.WorkflowTemplateCreateRequest;
-import io.argoproj.workflow.v1alpha.WorkflowTemplateLintRequest;
-import io.argoproj.workflow.v1alpha.WorkflowTemplateList;
-import io.argoproj.workflow.v1alpha.WorkflowTemplateUpdateRequest;
-import org.junit.Test;
+import io.argoproj.workflow.v1alpha.*;
 import org.junit.Ignore;
+import org.junit.Test;
+import org.openapitools.client.ApiException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for WorkflowTemplateServiceApi

@@ -13,16 +13,10 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import io.argoproj.workflow.v1alpha.Error;
 import io.argoproj.workflow.v1alpha.WorkflowEventBindingList;
-import org.junit.Test;
 import org.junit.Ignore;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.Test;
+import org.openapitools.client.ApiException;
 
 /**
  * API tests for EventServiceApi

@@ -13,20 +13,12 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import io.argoproj.workflow.v1alpha.ClusterWorkflowTemplate;
-import io.argoproj.workflow.v1alpha.ClusterWorkflowTemplateCreateRequest;
-import io.argoproj.workflow.v1alpha.ClusterWorkflowTemplateLintRequest;
-import io.argoproj.workflow.v1alpha.ClusterWorkflowTemplateList;
-import io.argoproj.workflow.v1alpha.ClusterWorkflowTemplateUpdateRequest;
-import io.argoproj.workflow.v1alpha.Error;
-import org.junit.Test;
+import io.argoproj.workflow.v1alpha.*;
 import org.junit.Ignore;
+import org.junit.Test;
+import org.openapitools.client.ApiException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for ClusterWorkflowTemplateServiceApi

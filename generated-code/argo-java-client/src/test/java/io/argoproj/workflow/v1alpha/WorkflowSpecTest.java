@@ -13,44 +13,6 @@
 
 package io.argoproj.workflow.v1alpha;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.argoproj.workflow.v1alpha.Arguments;
-import io.argoproj.workflow.v1alpha.ArtifactGC;
-import io.argoproj.workflow.v1alpha.ArtifactRepositoryRef;
-import io.argoproj.workflow.v1alpha.ExecutorConfig;
-import io.argoproj.workflow.v1alpha.LifecycleHook;
-import io.argoproj.workflow.v1alpha.Metadata;
-import io.argoproj.workflow.v1alpha.Metrics;
-import io.argoproj.workflow.v1alpha.PodDisruptionBudgetSpec;
-import io.argoproj.workflow.v1alpha.PodGC;
-import io.argoproj.workflow.v1alpha.RetryStrategy;
-import io.argoproj.workflow.v1alpha.Synchronization;
-import io.argoproj.workflow.v1alpha.TTLStrategy;
-import io.argoproj.workflow.v1alpha.Template;
-import io.argoproj.workflow.v1alpha.VolumeClaimGC;
-import io.argoproj.workflow.v1alpha.WorkflowMetadata;
-import io.argoproj.workflow.v1alpha.WorkflowTemplateRef;
-import io.kubernetes.client.models.V1Affinity;
-import io.kubernetes.client.models.V1HostAlias;
-import io.kubernetes.client.models.V1LocalObjectReference;
-import io.kubernetes.client.models.V1PersistentVolumeClaim;
-import io.kubernetes.client.models.V1PodDNSConfig;
-import io.kubernetes.client.models.V1PodSecurityContext;
-import io.kubernetes.client.models.V1Toleration;
-import io.kubernetes.client.models.V1Volume;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 

@@ -13,21 +13,12 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import io.argoproj.workflow.v1alpha.CreateSensorRequest;
-import io.argoproj.workflow.v1alpha.Error;
-import io.argoproj.workflow.v1alpha.Sensor;
-import io.argoproj.workflow.v1alpha.SensorList;
-import io.argoproj.workflow.v1alpha.Stream_result_of_sensor_LogEntry;
-import io.argoproj.workflow.v1alpha.Stream_result_of_sensor_SensorWatchEvent;
-import io.argoproj.workflow.v1alpha.UpdateSensorRequest;
-import org.junit.Test;
+import io.argoproj.workflow.v1alpha.*;
 import org.junit.Ignore;
+import org.junit.Test;
+import org.openapitools.client.ApiException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for SensorServiceApi

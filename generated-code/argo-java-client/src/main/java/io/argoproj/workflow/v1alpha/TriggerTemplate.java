@@ -13,31 +13,13 @@
 
 package io.argoproj.workflow.v1alpha;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.argoproj.workflow.v1alpha.AWSLambdaTrigger;
-import io.argoproj.workflow.v1alpha.ArgoWorkflowTrigger;
-import io.argoproj.workflow.v1alpha.AzureEventHubsTrigger;
-import io.argoproj.workflow.v1alpha.ConditionsResetCriteria;
-import io.argoproj.workflow.v1alpha.CustomTrigger;
-import io.argoproj.workflow.v1alpha.HTTPTrigger;
-import io.argoproj.workflow.v1alpha.KafkaTrigger;
-import io.argoproj.workflow.v1alpha.LogTrigger;
-import io.argoproj.workflow.v1alpha.NATSTrigger;
-import io.argoproj.workflow.v1alpha.OpenWhiskTrigger;
-import io.argoproj.workflow.v1alpha.PulsarTrigger;
-import io.argoproj.workflow.v1alpha.SlackTrigger;
-import io.argoproj.workflow.v1alpha.StandardK8STrigger;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * TriggerTemplate is the template that describes trigger specification.

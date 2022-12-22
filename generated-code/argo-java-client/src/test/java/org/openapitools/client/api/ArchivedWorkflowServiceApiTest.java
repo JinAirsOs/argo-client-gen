@@ -13,21 +13,10 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import io.argoproj.workflow.v1alpha.Error;
-import io.argoproj.workflow.v1alpha.LabelKeys;
-import io.argoproj.workflow.v1alpha.LabelValues;
-import io.argoproj.workflow.v1alpha.ResubmitArchivedWorkflowRequest;
-import io.argoproj.workflow.v1alpha.RetryArchivedWorkflowRequest;
-import io.argoproj.workflow.v1alpha.Workflow;
-import io.argoproj.workflow.v1alpha.WorkflowList;
-import org.junit.Test;
+import io.argoproj.workflow.v1alpha.*;
 import org.junit.Ignore;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import org.junit.Test;
+import org.openapitools.client.ApiException;
 
 /**
  * API tests for ArchivedWorkflowServiceApi

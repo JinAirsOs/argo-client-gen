@@ -13,30 +13,12 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import io.argoproj.workflow.v1alpha.Error;
-import io.argoproj.workflow.v1alpha.Stream_result_of_io_argoproj_workflow_v1alpha1_LogEntry;
-import io.argoproj.workflow.v1alpha.Stream_result_of_io_argoproj_workflow_v1alpha1_WorkflowWatchEvent;
-import io.argoproj.workflow.v1alpha.Stream_result_of_io_k8s_api_core_v1_Event;
-import io.argoproj.workflow.v1alpha.Workflow;
-import io.argoproj.workflow.v1alpha.WorkflowCreateRequest;
-import io.argoproj.workflow.v1alpha.WorkflowLintRequest;
-import io.argoproj.workflow.v1alpha.WorkflowList;
-import io.argoproj.workflow.v1alpha.WorkflowResubmitRequest;
-import io.argoproj.workflow.v1alpha.WorkflowResumeRequest;
-import io.argoproj.workflow.v1alpha.WorkflowRetryRequest;
-import io.argoproj.workflow.v1alpha.WorkflowSetRequest;
-import io.argoproj.workflow.v1alpha.WorkflowStopRequest;
-import io.argoproj.workflow.v1alpha.WorkflowSubmitRequest;
-import io.argoproj.workflow.v1alpha.WorkflowSuspendRequest;
-import io.argoproj.workflow.v1alpha.WorkflowTerminateRequest;
-import org.junit.Test;
+import io.argoproj.workflow.v1alpha.*;
 import org.junit.Ignore;
+import org.junit.Test;
+import org.openapitools.client.ApiException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for WorkflowServiceApi

@@ -13,30 +13,12 @@
 
 package io.argoproj.workflow.v1alpha;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.argoproj.workflow.v1alpha.ArtGCStatus;
-import io.argoproj.workflow.v1alpha.ArtifactRepositoryRefStatus;
-import io.argoproj.workflow.v1alpha.Condition;
-import io.argoproj.workflow.v1alpha.NodeStatus;
-import io.argoproj.workflow.v1alpha.Outputs;
-import io.argoproj.workflow.v1alpha.SynchronizationStatus;
-import io.argoproj.workflow.v1alpha.Template;
-import io.argoproj.workflow.v1alpha.WorkflowSpec;
-import io.kubernetes.client.models.V1Volume;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import org.joda.time.DateTime;
+
+import java.util.*;
 
 /**
  * WorkflowStatus contains overall status information about a workflow

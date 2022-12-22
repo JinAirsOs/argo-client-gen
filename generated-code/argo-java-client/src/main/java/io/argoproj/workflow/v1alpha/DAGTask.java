@@ -13,26 +13,11 @@
 
 package io.argoproj.workflow.v1alpha;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.argoproj.workflow.v1alpha.Arguments;
-import io.argoproj.workflow.v1alpha.ContinueOn;
-import io.argoproj.workflow.v1alpha.LifecycleHook;
-import io.argoproj.workflow.v1alpha.Sequence;
-import io.argoproj.workflow.v1alpha.Template;
-import io.argoproj.workflow.v1alpha.TemplateRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.*;
 
 /**
  * DAGTask represents a node in the graph during DAG execution

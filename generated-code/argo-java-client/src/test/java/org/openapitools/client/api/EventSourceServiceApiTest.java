@@ -13,21 +13,12 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import io.argoproj.workflow.v1alpha.CreateEventSourceRequest;
-import io.argoproj.workflow.v1alpha.Error;
-import io.argoproj.workflow.v1alpha.EventSource;
-import io.argoproj.workflow.v1alpha.EventSourceList;
-import io.argoproj.workflow.v1alpha.Stream_result_of_eventsource_EventSourceWatchEvent;
-import io.argoproj.workflow.v1alpha.Stream_result_of_eventsource_LogEntry;
-import io.argoproj.workflow.v1alpha.UpdateEventSourceRequest;
-import org.junit.Test;
+import io.argoproj.workflow.v1alpha.*;
 import org.junit.Ignore;
+import org.junit.Test;
+import org.openapitools.client.ApiException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for EventSourceServiceApi

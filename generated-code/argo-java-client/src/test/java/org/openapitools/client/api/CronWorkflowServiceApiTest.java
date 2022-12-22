@@ -13,22 +13,12 @@
 
 package org.openapitools.client.api;
 
-import org.openapitools.client.ApiException;
-import io.argoproj.workflow.v1alpha.CreateCronWorkflowRequest;
-import io.argoproj.workflow.v1alpha.CronWorkflow;
-import io.argoproj.workflow.v1alpha.CronWorkflowList;
-import io.argoproj.workflow.v1alpha.CronWorkflowResumeRequest;
-import io.argoproj.workflow.v1alpha.CronWorkflowSuspendRequest;
-import io.argoproj.workflow.v1alpha.Error;
-import io.argoproj.workflow.v1alpha.LintCronWorkflowRequest;
-import io.argoproj.workflow.v1alpha.UpdateCronWorkflowRequest;
-import org.junit.Test;
+import io.argoproj.workflow.v1alpha.*;
 import org.junit.Ignore;
+import org.junit.Test;
+import org.openapitools.client.ApiException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for CronWorkflowServiceApi
