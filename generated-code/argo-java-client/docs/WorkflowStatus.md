@@ -7,7 +7,6 @@ WorkflowStatus contains overall status information about a workflow
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**artifactGCStatus** | [**ArtGCStatus**](ArtGCStatus.md) |  |  [optional]
 **artifactRepositoryRef** | [**ArtifactRepositoryRefStatus**](ArtifactRepositoryRefStatus.md) |  |  [optional]
 **compressedNodes** | **String** | Compressed and base64 decoded Nodes map |  [optional]
 **conditions** | [**List&lt;Condition&gt;**](Condition.md) | Conditions is a list of conditions the Workflow may have |  [optional]

@@ -51,10 +51,6 @@ public class GetUserInfoResponse {
   @SerializedName(SERIALIZED_NAME_SERVICE_ACCOUNT_NAME)
   private String serviceAccountName;
 
-  public static final String SERIALIZED_NAME_SERVICE_ACCOUNT_NAMESPACE = "serviceAccountNamespace";
-  @SerializedName(SERIALIZED_NAME_SERVICE_ACCOUNT_NAMESPACE)
-  private String serviceAccountNamespace;
-
   public static final String SERIALIZED_NAME_SUBJECT = "subject";
   @SerializedName(SERIALIZED_NAME_SUBJECT)
   private String subject;
@@ -183,29 +179,6 @@ public class GetUserInfoResponse {
   }
 
 
-  public GetUserInfoResponse serviceAccountNamespace(String serviceAccountNamespace) {
-    
-    this.serviceAccountNamespace = serviceAccountNamespace;
-    return this;
-  }
-
-   /**
-   * Get serviceAccountNamespace
-   * @return serviceAccountNamespace
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getServiceAccountNamespace() {
-    return serviceAccountNamespace;
-  }
-
-
-  public void setServiceAccountNamespace(String serviceAccountNamespace) {
-    this.serviceAccountNamespace = serviceAccountNamespace;
-  }
-
-
   public GetUserInfoResponse subject(String subject) {
     
     this.subject = subject;
@@ -243,13 +216,12 @@ public class GetUserInfoResponse {
         Objects.equals(this.groups, ioArgoprojWorkflowV1alpha1GetUserInfoResponse.groups) &&
         Objects.equals(this.issuer, ioArgoprojWorkflowV1alpha1GetUserInfoResponse.issuer) &&
         Objects.equals(this.serviceAccountName, ioArgoprojWorkflowV1alpha1GetUserInfoResponse.serviceAccountName) &&
-        Objects.equals(this.serviceAccountNamespace, ioArgoprojWorkflowV1alpha1GetUserInfoResponse.serviceAccountNamespace) &&
         Objects.equals(this.subject, ioArgoprojWorkflowV1alpha1GetUserInfoResponse.subject);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, emailVerified, groups, issuer, serviceAccountName, serviceAccountNamespace, subject);
+    return Objects.hash(email, emailVerified, groups, issuer, serviceAccountName, subject);
   }
 
 
@@ -262,7 +234,6 @@ public class GetUserInfoResponse {
     sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
     sb.append("    issuer: ").append(toIndentedString(issuer)).append("\n");
     sb.append("    serviceAccountName: ").append(toIndentedString(serviceAccountName)).append("\n");
-    sb.append("    serviceAccountNamespace: ").append(toIndentedString(serviceAccountNamespace)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("}");
     return sb.toString();

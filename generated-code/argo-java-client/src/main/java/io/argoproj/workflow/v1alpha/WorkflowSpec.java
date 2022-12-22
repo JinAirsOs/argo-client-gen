@@ -21,7 +21,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.argoproj.workflow.v1alpha.Arguments;
-import io.argoproj.workflow.v1alpha.ArtifactGC;
 import io.argoproj.workflow.v1alpha.ArtifactRepositoryRef;
 import io.argoproj.workflow.v1alpha.ExecutorConfig;
 import io.argoproj.workflow.v1alpha.LifecycleHook;
@@ -73,10 +72,6 @@ public class WorkflowSpec {
   public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
   @SerializedName(SERIALIZED_NAME_ARGUMENTS)
   private Arguments arguments;
-
-  public static final String SERIALIZED_NAME_ARTIFACT_G_C = "artifactGC";
-  @SerializedName(SERIALIZED_NAME_ARTIFACT_G_C)
-  private ArtifactGC artifactGC;
 
   public static final String SERIALIZED_NAME_ARTIFACT_REPOSITORY_REF = "artifactRepositoryRef";
   @SerializedName(SERIALIZED_NAME_ARTIFACT_REPOSITORY_REF)
@@ -316,29 +311,6 @@ public class WorkflowSpec {
 
   public void setArguments(Arguments arguments) {
     this.arguments = arguments;
-  }
-
-
-  public WorkflowSpec artifactGC(ArtifactGC artifactGC) {
-    
-    this.artifactGC = artifactGC;
-    return this;
-  }
-
-   /**
-   * Get artifactGC
-   * @return artifactGC
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public ArtifactGC getArtifactGC() {
-    return artifactGC;
-  }
-
-
-  public void setArtifactGC(ArtifactGC artifactGC) {
-    this.artifactGC = artifactGC;
   }
 
 
@@ -772,11 +744,11 @@ public class WorkflowSpec {
   }
 
    /**
-   * Priority to apply to workflow pods. DEPRECATED: Use PodPriorityClassName instead.
+   * Priority to apply to workflow pods.
    * @return podPriority
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Priority to apply to workflow pods. DEPRECATED: Use PodPriorityClassName instead.")
+  @ApiModelProperty(value = "Priority to apply to workflow pods.")
 
   public Integer getPodPriority() {
     return podPriority;
@@ -1270,7 +1242,6 @@ public class WorkflowSpec {
         Objects.equals(this.affinity, ioArgoprojWorkflowV1alpha1WorkflowSpec.affinity) &&
         Objects.equals(this.archiveLogs, ioArgoprojWorkflowV1alpha1WorkflowSpec.archiveLogs) &&
         Objects.equals(this.arguments, ioArgoprojWorkflowV1alpha1WorkflowSpec.arguments) &&
-        Objects.equals(this.artifactGC, ioArgoprojWorkflowV1alpha1WorkflowSpec.artifactGC) &&
         Objects.equals(this.artifactRepositoryRef, ioArgoprojWorkflowV1alpha1WorkflowSpec.artifactRepositoryRef) &&
         Objects.equals(this.automountServiceAccountToken, ioArgoprojWorkflowV1alpha1WorkflowSpec.automountServiceAccountToken) &&
         Objects.equals(this.dnsConfig, ioArgoprojWorkflowV1alpha1WorkflowSpec.dnsConfig) &&
@@ -1312,7 +1283,7 @@ public class WorkflowSpec {
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeDeadlineSeconds, affinity, archiveLogs, arguments, artifactGC, artifactRepositoryRef, automountServiceAccountToken, dnsConfig, dnsPolicy, entrypoint, executor, hooks, hostAliases, hostNetwork, imagePullSecrets, metrics, nodeSelector, onExit, parallelism, podDisruptionBudget, podGC, podMetadata, podPriority, podPriorityClassName, podSpecPatch, priority, retryStrategy, schedulerName, securityContext, serviceAccountName, shutdown, suspend, synchronization, templateDefaults, templates, tolerations, ttlStrategy, volumeClaimGC, volumeClaimTemplates, volumes, workflowMetadata, workflowTemplateRef);
+    return Objects.hash(activeDeadlineSeconds, affinity, archiveLogs, arguments, artifactRepositoryRef, automountServiceAccountToken, dnsConfig, dnsPolicy, entrypoint, executor, hooks, hostAliases, hostNetwork, imagePullSecrets, metrics, nodeSelector, onExit, parallelism, podDisruptionBudget, podGC, podMetadata, podPriority, podPriorityClassName, podSpecPatch, priority, retryStrategy, schedulerName, securityContext, serviceAccountName, shutdown, suspend, synchronization, templateDefaults, templates, tolerations, ttlStrategy, volumeClaimGC, volumeClaimTemplates, volumes, workflowMetadata, workflowTemplateRef);
   }
 
 
@@ -1324,7 +1295,6 @@ public class WorkflowSpec {
     sb.append("    affinity: ").append(toIndentedString(affinity)).append("\n");
     sb.append("    archiveLogs: ").append(toIndentedString(archiveLogs)).append("\n");
     sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
-    sb.append("    artifactGC: ").append(toIndentedString(artifactGC)).append("\n");
     sb.append("    artifactRepositoryRef: ").append(toIndentedString(artifactRepositoryRef)).append("\n");
     sb.append("    automountServiceAccountToken: ").append(toIndentedString(automountServiceAccountToken)).append("\n");
     sb.append("    dnsConfig: ").append(toIndentedString(dnsConfig)).append("\n");

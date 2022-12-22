@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.argoproj.workflow.v1alpha.HTTPAuth;
 import io.argoproj.workflow.v1alpha.Header;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -29,15 +28,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * HTTPArtifact allows a file served on HTTP to be placed as an input artifact in a container
+ * HTTPArtifact allows an file served on HTTP to be placed as an input artifact in a container
  */
-@ApiModel(description = "HTTPArtifact allows a file served on HTTP to be placed as an input artifact in a container")
+@ApiModel(description = "HTTPArtifact allows an file served on HTTP to be placed as an input artifact in a container")
 
 public class HTTPArtifact {
-  public static final String SERIALIZED_NAME_AUTH = "auth";
-  @SerializedName(SERIALIZED_NAME_AUTH)
-  private HTTPAuth auth;
-
   public static final String SERIALIZED_NAME_HEADERS = "headers";
   @SerializedName(SERIALIZED_NAME_HEADERS)
   private List<Header> headers = null;
@@ -45,29 +40,6 @@ public class HTTPArtifact {
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
   private String url;
-
-
-  public HTTPArtifact auth(HTTPAuth auth) {
-    
-    this.auth = auth;
-    return this;
-  }
-
-   /**
-   * Get auth
-   * @return auth
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public HTTPAuth getAuth() {
-    return auth;
-  }
-
-
-  public void setAuth(HTTPAuth auth) {
-    this.auth = auth;
-  }
 
 
   public HTTPArtifact headers(List<Header> headers) {
@@ -132,14 +104,13 @@ public class HTTPArtifact {
       return false;
     }
     HTTPArtifact ioArgoprojWorkflowV1alpha1HTTPArtifact = (HTTPArtifact) o;
-    return Objects.equals(this.auth, ioArgoprojWorkflowV1alpha1HTTPArtifact.auth) &&
-        Objects.equals(this.headers, ioArgoprojWorkflowV1alpha1HTTPArtifact.headers) &&
+    return Objects.equals(this.headers, ioArgoprojWorkflowV1alpha1HTTPArtifact.headers) &&
         Objects.equals(this.url, ioArgoprojWorkflowV1alpha1HTTPArtifact.url);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auth, headers, url);
+    return Objects.hash(headers, url);
   }
 
 
@@ -147,7 +118,6 @@ public class HTTPArtifact {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class HTTPArtifact {\n");
-    sb.append("    auth: ").append(toIndentedString(auth)).append("\n");
     sb.append("    headers: ").append(toIndentedString(headers)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("}");

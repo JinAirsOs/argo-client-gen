@@ -56,10 +56,6 @@ public class EventDependencyFilter {
   @SerializedName(SERIALIZED_NAME_EXPRS)
   private List<ExprFilter> exprs = null;
 
-  public static final String SERIALIZED_NAME_SCRIPT = "script";
-  @SerializedName(SERIALIZED_NAME_SCRIPT)
-  private String script;
-
   public static final String SERIALIZED_NAME_TIME = "time";
   @SerializedName(SERIALIZED_NAME_TIME)
   private TimeFilter time;
@@ -196,29 +192,6 @@ public class EventDependencyFilter {
   }
 
 
-  public EventDependencyFilter script(String script) {
-    
-    this.script = script;
-    return this;
-  }
-
-   /**
-   * Script refers to a Lua script evaluated to determine the validity of an io.argoproj.workflow.v1alpha1.
-   * @return script
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Script refers to a Lua script evaluated to determine the validity of an io.argoproj.workflow.v1alpha1.")
-
-  public String getScript() {
-    return script;
-  }
-
-
-  public void setScript(String script) {
-    this.script = script;
-  }
-
-
   public EventDependencyFilter time(TimeFilter time) {
     
     this.time = time;
@@ -256,13 +229,12 @@ public class EventDependencyFilter {
         Objects.equals(this.dataLogicalOperator, ioArgoprojEventsV1alpha1EventDependencyFilter.dataLogicalOperator) &&
         Objects.equals(this.exprLogicalOperator, ioArgoprojEventsV1alpha1EventDependencyFilter.exprLogicalOperator) &&
         Objects.equals(this.exprs, ioArgoprojEventsV1alpha1EventDependencyFilter.exprs) &&
-        Objects.equals(this.script, ioArgoprojEventsV1alpha1EventDependencyFilter.script) &&
         Objects.equals(this.time, ioArgoprojEventsV1alpha1EventDependencyFilter.time);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(context, data, dataLogicalOperator, exprLogicalOperator, exprs, script, time);
+    return Objects.hash(context, data, dataLogicalOperator, exprLogicalOperator, exprs, time);
   }
 
 
@@ -275,7 +247,6 @@ public class EventDependencyFilter {
     sb.append("    dataLogicalOperator: ").append(toIndentedString(dataLogicalOperator)).append("\n");
     sb.append("    exprLogicalOperator: ").append(toIndentedString(exprLogicalOperator)).append("\n");
     sb.append("    exprs: ").append(toIndentedString(exprs)).append("\n");
-    sb.append("    script: ").append(toIndentedString(script)).append("\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
     sb.append("}");
     return sb.toString();

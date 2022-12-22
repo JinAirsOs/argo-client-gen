@@ -37,10 +37,6 @@ import java.util.Map;
  */
 
 public class KafkaEventSource {
-  public static final String SERIALIZED_NAME_CONFIG = "config";
-  @SerializedName(SERIALIZED_NAME_CONFIG)
-  private String config;
-
   public static final String SERIALIZED_NAME_CONNECTION_BACKOFF = "connectionBackoff";
   @SerializedName(SERIALIZED_NAME_CONNECTION_BACKOFF)
   private Backoff connectionBackoff;
@@ -88,29 +84,6 @@ public class KafkaEventSource {
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
   private String version;
-
-
-  public KafkaEventSource config(String config) {
-    
-    this.config = config;
-    return this;
-  }
-
-   /**
-   * Yaml format Sarama config for Kafka connection. It follows the struct of sarama.Config. See https://github.com/Shopify/sarama/blob/main/config.go e.g.  consumer:   fetch:     min: 1 net:   MaxOpenRequests: 5  +optional
-   * @return config
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Yaml format Sarama config for Kafka connection. It follows the struct of sarama.Config. See https://github.com/Shopify/sarama/blob/main/config.go e.g.  consumer:   fetch:     min: 1 net:   MaxOpenRequests: 5  +optional")
-
-  public String getConfig() {
-    return config;
-  }
-
-
-  public void setConfig(String config) {
-    this.config = config;
-  }
 
 
   public KafkaEventSource connectionBackoff(Backoff connectionBackoff) {
@@ -406,8 +379,7 @@ public class KafkaEventSource {
       return false;
     }
     KafkaEventSource ioArgoprojEventsV1alpha1KafkaEventSource = (KafkaEventSource) o;
-    return Objects.equals(this.config, ioArgoprojEventsV1alpha1KafkaEventSource.config) &&
-        Objects.equals(this.connectionBackoff, ioArgoprojEventsV1alpha1KafkaEventSource.connectionBackoff) &&
+    return Objects.equals(this.connectionBackoff, ioArgoprojEventsV1alpha1KafkaEventSource.connectionBackoff) &&
         Objects.equals(this.consumerGroup, ioArgoprojEventsV1alpha1KafkaEventSource.consumerGroup) &&
         Objects.equals(this.filter, ioArgoprojEventsV1alpha1KafkaEventSource.filter) &&
         Objects.equals(this.jsonBody, ioArgoprojEventsV1alpha1KafkaEventSource.jsonBody) &&
@@ -423,7 +395,7 @@ public class KafkaEventSource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(config, connectionBackoff, consumerGroup, filter, jsonBody, limitEventsPerSecond, metadata, partition, sasl, tls, topic, url, version);
+    return Objects.hash(connectionBackoff, consumerGroup, filter, jsonBody, limitEventsPerSecond, metadata, partition, sasl, tls, topic, url, version);
   }
 
 
@@ -431,7 +403,6 @@ public class KafkaEventSource {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class KafkaEventSource {\n");
-    sb.append("    config: ").append(toIndentedString(config)).append("\n");
     sb.append("    connectionBackoff: ").append(toIndentedString(connectionBackoff)).append("\n");
     sb.append("    consumerGroup: ").append(toIndentedString(consumerGroup)).append("\n");
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");

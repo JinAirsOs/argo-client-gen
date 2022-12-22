@@ -7,7 +7,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accessKey** | [**V1SecretKeySelector**](V1SecretKeySelector.md) |  |  [optional]
-**endpoint** | **String** |  |  [optional]
 **filter** | [**EventSourceFilter**](EventSourceFilter.md) |  |  [optional]
 **metadata** | **Map&lt;String, String&gt;** |  |  [optional]
 **region** | **String** |  |  [optional]

@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.argoproj.workflow.v1alpha.ManifestFrom;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -48,10 +47,6 @@ public class ResourceTemplate {
   public static final String SERIALIZED_NAME_MANIFEST = "manifest";
   @SerializedName(SERIALIZED_NAME_MANIFEST)
   private String manifest;
-
-  public static final String SERIALIZED_NAME_MANIFEST_FROM = "manifestFrom";
-  @SerializedName(SERIALIZED_NAME_MANIFEST_FROM)
-  private ManifestFrom manifestFrom;
 
   public static final String SERIALIZED_NAME_MERGE_STRATEGY = "mergeStrategy";
   @SerializedName(SERIALIZED_NAME_MERGE_STRATEGY)
@@ -165,29 +160,6 @@ public class ResourceTemplate {
   }
 
 
-  public ResourceTemplate manifestFrom(ManifestFrom manifestFrom) {
-    
-    this.manifestFrom = manifestFrom;
-    return this;
-  }
-
-   /**
-   * Get manifestFrom
-   * @return manifestFrom
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public ManifestFrom getManifestFrom() {
-    return manifestFrom;
-  }
-
-
-  public void setManifestFrom(ManifestFrom manifestFrom) {
-    this.manifestFrom = manifestFrom;
-  }
-
-
   public ResourceTemplate mergeStrategy(String mergeStrategy) {
     
     this.mergeStrategy = mergeStrategy;
@@ -270,7 +242,6 @@ public class ResourceTemplate {
         Objects.equals(this.failureCondition, ioArgoprojWorkflowV1alpha1ResourceTemplate.failureCondition) &&
         Objects.equals(this.flags, ioArgoprojWorkflowV1alpha1ResourceTemplate.flags) &&
         Objects.equals(this.manifest, ioArgoprojWorkflowV1alpha1ResourceTemplate.manifest) &&
-        Objects.equals(this.manifestFrom, ioArgoprojWorkflowV1alpha1ResourceTemplate.manifestFrom) &&
         Objects.equals(this.mergeStrategy, ioArgoprojWorkflowV1alpha1ResourceTemplate.mergeStrategy) &&
         Objects.equals(this.setOwnerReference, ioArgoprojWorkflowV1alpha1ResourceTemplate.setOwnerReference) &&
         Objects.equals(this.successCondition, ioArgoprojWorkflowV1alpha1ResourceTemplate.successCondition);
@@ -278,7 +249,7 @@ public class ResourceTemplate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, failureCondition, flags, manifest, manifestFrom, mergeStrategy, setOwnerReference, successCondition);
+    return Objects.hash(action, failureCondition, flags, manifest, mergeStrategy, setOwnerReference, successCondition);
   }
 
 
@@ -290,7 +261,6 @@ public class ResourceTemplate {
     sb.append("    failureCondition: ").append(toIndentedString(failureCondition)).append("\n");
     sb.append("    flags: ").append(toIndentedString(flags)).append("\n");
     sb.append("    manifest: ").append(toIndentedString(manifest)).append("\n");
-    sb.append("    manifestFrom: ").append(toIndentedString(manifestFrom)).append("\n");
     sb.append("    mergeStrategy: ").append(toIndentedString(mergeStrategy)).append("\n");
     sb.append("    setOwnerReference: ").append(toIndentedString(setOwnerReference)).append("\n");
     sb.append("    successCondition: ").append(toIndentedString(successCondition)).append("\n");

@@ -27,7 +27,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.argoproj.workflow.v1alpha.CollectEventRequest;
 import io.argoproj.workflow.v1alpha.Error;
 import io.argoproj.workflow.v1alpha.GetUserInfoResponse;
 import io.argoproj.workflow.v1alpha.InfoResponse;
@@ -58,120 +57,6 @@ public class InfoServiceApi {
         this.localVarApiClient = apiClient;
     }
 
-    /**
-     * Build call for infoServiceCollectEvent
-     * @param body  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call infoServiceCollectEventCall(CollectEventRequest body, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = body;
-
-        // create path and map variables
-        String localVarPath = "/api/v1/tracking/event";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "BearerToken" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call infoServiceCollectEventValidateBeforeCall(CollectEventRequest body, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling infoServiceCollectEvent(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = infoServiceCollectEventCall(body, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * 
-     * 
-     * @param body  (required)
-     * @return Object
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
-     </table>
-     */
-    public Object infoServiceCollectEvent(CollectEventRequest body) throws ApiException {
-        ApiResponse<Object> localVarResp = infoServiceCollectEventWithHttpInfo(body);
-        return localVarResp.getData();
-    }
-
-    /**
-     * 
-     * 
-     * @param body  (required)
-     * @return ApiResponse&lt;Object&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Object> infoServiceCollectEventWithHttpInfo(CollectEventRequest body) throws ApiException {
-        okhttp3.Call localVarCall = infoServiceCollectEventValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     *  (asynchronously)
-     * 
-     * @param body  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call infoServiceCollectEventAsync(CollectEventRequest body, final ApiCallback<Object> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = infoServiceCollectEventValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
     /**
      * Build call for infoServiceGetInfo
      * @param _callback Callback for upload/download progress

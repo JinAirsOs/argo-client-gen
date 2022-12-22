@@ -9,10 +9,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **archive** | [**ArchiveStrategy**](ArchiveStrategy.md) |  |  [optional]
 **archiveLogs** | **Boolean** | ArchiveLogs indicates if the container logs should be archived |  [optional]
-**artifactGC** | [**ArtifactGC**](ArtifactGC.md) |  |  [optional]
 **artifactory** | [**ArtifactoryArtifact**](ArtifactoryArtifact.md) |  |  [optional]
-**azure** | [**AzureArtifact**](AzureArtifact.md) |  |  [optional]
-**deleted** | **Boolean** | Has this been deleted? |  [optional]
 **from** | **String** | From allows an artifact to reference an artifact from a previous step |  [optional]
 **fromExpression** | **String** | FromExpression, if defined, is evaluated to specify the value for the artifact |  [optional]
 **gcs** | [**GCSArtifact**](GCSArtifact.md) |  |  [optional]

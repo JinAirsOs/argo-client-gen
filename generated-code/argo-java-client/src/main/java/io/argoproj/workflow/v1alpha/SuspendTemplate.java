@@ -42,11 +42,11 @@ public class SuspendTemplate {
   }
 
    /**
-   * Duration is the seconds to wait before automatically resuming a template. Must be a string. Default unit is seconds. Could also be a Duration, e.g.: \&quot;2m\&quot;, \&quot;6h\&quot;, \&quot;1d\&quot;
+   * Duration is the seconds to wait before automatically resuming a template
    * @return duration
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Duration is the seconds to wait before automatically resuming a template. Must be a string. Default unit is seconds. Could also be a Duration, e.g.: \"2m\", \"6h\", \"1d\"")
+  @ApiModelProperty(value = "Duration is the seconds to wait before automatically resuming a template")
 
   public String getDuration() {
     return duration;

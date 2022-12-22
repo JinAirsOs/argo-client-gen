@@ -56,171 +56,6 @@ public class ArtifactServiceApi {
     }
 
     /**
-     * Build call for artifactServiceGetArtifactFile
-     * @param namespace  (required)
-     * @param idDiscriminator  (required)
-     * @param id  (required)
-     * @param nodeId  (required)
-     * @param artifactName  (required)
-     * @param artifactDiscriminator  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An artifact file. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call artifactServiceGetArtifactFileCall(String namespace, String idDiscriminator, String id, String nodeId, String artifactName, String artifactDiscriminator, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/artifact-files/{namespace}/{idDiscriminator}/{id}/{nodeId}/{artifactDiscriminator}/{artifactName}"
-            .replaceAll("\\{" + "namespace" + "\\}", localVarApiClient.escapeString(namespace.toString()))
-            .replaceAll("\\{" + "idDiscriminator" + "\\}", localVarApiClient.escapeString(idDiscriminator.toString()))
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()))
-            .replaceAll("\\{" + "nodeId" + "\\}", localVarApiClient.escapeString(nodeId.toString()))
-            .replaceAll("\\{" + "artifactName" + "\\}", localVarApiClient.escapeString(artifactName.toString()))
-            .replaceAll("\\{" + "artifactDiscriminator" + "\\}", localVarApiClient.escapeString(artifactDiscriminator.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "BearerToken" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call artifactServiceGetArtifactFileValidateBeforeCall(String namespace, String idDiscriminator, String id, String nodeId, String artifactName, String artifactDiscriminator, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'namespace' is set
-        if (namespace == null) {
-            throw new ApiException("Missing the required parameter 'namespace' when calling artifactServiceGetArtifactFile(Async)");
-        }
-        
-        // verify the required parameter 'idDiscriminator' is set
-        if (idDiscriminator == null) {
-            throw new ApiException("Missing the required parameter 'idDiscriminator' when calling artifactServiceGetArtifactFile(Async)");
-        }
-        
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling artifactServiceGetArtifactFile(Async)");
-        }
-        
-        // verify the required parameter 'nodeId' is set
-        if (nodeId == null) {
-            throw new ApiException("Missing the required parameter 'nodeId' when calling artifactServiceGetArtifactFile(Async)");
-        }
-        
-        // verify the required parameter 'artifactName' is set
-        if (artifactName == null) {
-            throw new ApiException("Missing the required parameter 'artifactName' when calling artifactServiceGetArtifactFile(Async)");
-        }
-        
-        // verify the required parameter 'artifactDiscriminator' is set
-        if (artifactDiscriminator == null) {
-            throw new ApiException("Missing the required parameter 'artifactDiscriminator' when calling artifactServiceGetArtifactFile(Async)");
-        }
-        
-
-        okhttp3.Call localVarCall = artifactServiceGetArtifactFileCall(namespace, idDiscriminator, id, nodeId, artifactName, artifactDiscriminator, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Get an artifact.
-     * 
-     * @param namespace  (required)
-     * @param idDiscriminator  (required)
-     * @param id  (required)
-     * @param nodeId  (required)
-     * @param artifactName  (required)
-     * @param artifactDiscriminator  (required)
-     * @return File
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An artifact file. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
-     </table>
-     */
-    public File artifactServiceGetArtifactFile(String namespace, String idDiscriminator, String id, String nodeId, String artifactName, String artifactDiscriminator) throws ApiException {
-        ApiResponse<File> localVarResp = artifactServiceGetArtifactFileWithHttpInfo(namespace, idDiscriminator, id, nodeId, artifactName, artifactDiscriminator);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Get an artifact.
-     * 
-     * @param namespace  (required)
-     * @param idDiscriminator  (required)
-     * @param id  (required)
-     * @param nodeId  (required)
-     * @param artifactName  (required)
-     * @param artifactDiscriminator  (required)
-     * @return ApiResponse&lt;File&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An artifact file. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<File> artifactServiceGetArtifactFileWithHttpInfo(String namespace, String idDiscriminator, String id, String nodeId, String artifactName, String artifactDiscriminator) throws ApiException {
-        okhttp3.Call localVarCall = artifactServiceGetArtifactFileValidateBeforeCall(namespace, idDiscriminator, id, nodeId, artifactName, artifactDiscriminator, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Get an artifact. (asynchronously)
-     * 
-     * @param namespace  (required)
-     * @param idDiscriminator  (required)
-     * @param id  (required)
-     * @param nodeId  (required)
-     * @param artifactName  (required)
-     * @param artifactDiscriminator  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> An artifact file. </td><td>  -  </td></tr>
-        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call artifactServiceGetArtifactFileAsync(String namespace, String idDiscriminator, String id, String nodeId, String artifactName, String artifactDiscriminator, final ApiCallback<File> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = artifactServiceGetArtifactFileValidateBeforeCall(namespace, idDiscriminator, id, nodeId, artifactName, artifactDiscriminator, _callback);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
      * Build call for artifactServiceGetInputArtifact
      * @param namespace  (required)
      * @param name  (required)
@@ -305,7 +140,6 @@ public class ArtifactServiceApi {
      * @param name  (required)
      * @param nodeId  (required)
      * @param artifactName  (required)
-     * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -314,9 +148,8 @@ public class ArtifactServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public File artifactServiceGetInputArtifact(String namespace, String name, String nodeId, String artifactName) throws ApiException {
-        ApiResponse<File> localVarResp = artifactServiceGetInputArtifactWithHttpInfo(namespace, name, nodeId, artifactName);
-        return localVarResp.getData();
+    public void artifactServiceGetInputArtifact(String namespace, String name, String nodeId, String artifactName) throws ApiException {
+        artifactServiceGetInputArtifactWithHttpInfo(namespace, name, nodeId, artifactName);
     }
 
     /**
@@ -326,7 +159,7 @@ public class ArtifactServiceApi {
      * @param name  (required)
      * @param nodeId  (required)
      * @param artifactName  (required)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -335,10 +168,9 @@ public class ArtifactServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> artifactServiceGetInputArtifactWithHttpInfo(String namespace, String name, String nodeId, String artifactName) throws ApiException {
+    public ApiResponse<Void> artifactServiceGetInputArtifactWithHttpInfo(String namespace, String name, String nodeId, String artifactName) throws ApiException {
         okhttp3.Call localVarCall = artifactServiceGetInputArtifactValidateBeforeCall(namespace, name, nodeId, artifactName, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
+        return localVarApiClient.execute(localVarCall);
     }
 
     /**
@@ -358,15 +190,15 @@ public class ArtifactServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call artifactServiceGetInputArtifactAsync(String namespace, String name, String nodeId, String artifactName, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call artifactServiceGetInputArtifactAsync(String namespace, String name, String nodeId, String artifactName, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = artifactServiceGetInputArtifactValidateBeforeCall(namespace, name, nodeId, artifactName, _callback);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for artifactServiceGetInputArtifactByUID
+     * @param namespace  (required)
      * @param uid  (required)
      * @param nodeId  (required)
      * @param artifactName  (required)
@@ -380,11 +212,12 @@ public class ArtifactServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call artifactServiceGetInputArtifactByUIDCall(String uid, String nodeId, String artifactName, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call artifactServiceGetInputArtifactByUIDCall(String namespace, String uid, String nodeId, String artifactName, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/input-artifacts-by-uid/{uid}/{nodeId}/{artifactName}"
+            .replaceAll("\\{" + "namespace" + "\\}", localVarApiClient.escapeString(namespace.toString()))
             .replaceAll("\\{" + "uid" + "\\}", localVarApiClient.escapeString(uid.toString()))
             .replaceAll("\\{" + "nodeId" + "\\}", localVarApiClient.escapeString(nodeId.toString()))
             .replaceAll("\\{" + "artifactName" + "\\}", localVarApiClient.escapeString(artifactName.toString()));
@@ -413,7 +246,12 @@ public class ArtifactServiceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call artifactServiceGetInputArtifactByUIDValidateBeforeCall(String uid, String nodeId, String artifactName, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call artifactServiceGetInputArtifactByUIDValidateBeforeCall(String namespace, String uid, String nodeId, String artifactName, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'namespace' is set
+        if (namespace == null) {
+            throw new ApiException("Missing the required parameter 'namespace' when calling artifactServiceGetInputArtifactByUID(Async)");
+        }
         
         // verify the required parameter 'uid' is set
         if (uid == null) {
@@ -431,7 +269,7 @@ public class ArtifactServiceApi {
         }
         
 
-        okhttp3.Call localVarCall = artifactServiceGetInputArtifactByUIDCall(uid, nodeId, artifactName, _callback);
+        okhttp3.Call localVarCall = artifactServiceGetInputArtifactByUIDCall(namespace, uid, nodeId, artifactName, _callback);
         return localVarCall;
 
     }
@@ -439,6 +277,7 @@ public class ArtifactServiceApi {
     /**
      * Get an input artifact by UID.
      * 
+     * @param namespace  (required)
      * @param uid  (required)
      * @param nodeId  (required)
      * @param artifactName  (required)
@@ -451,14 +290,15 @@ public class ArtifactServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public File artifactServiceGetInputArtifactByUID(String uid, String nodeId, String artifactName) throws ApiException {
-        ApiResponse<File> localVarResp = artifactServiceGetInputArtifactByUIDWithHttpInfo(uid, nodeId, artifactName);
+    public File artifactServiceGetInputArtifactByUID(String namespace, String uid, String nodeId, String artifactName) throws ApiException {
+        ApiResponse<File> localVarResp = artifactServiceGetInputArtifactByUIDWithHttpInfo(namespace, uid, nodeId, artifactName);
         return localVarResp.getData();
     }
 
     /**
      * Get an input artifact by UID.
      * 
+     * @param namespace  (required)
      * @param uid  (required)
      * @param nodeId  (required)
      * @param artifactName  (required)
@@ -471,8 +311,8 @@ public class ArtifactServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> artifactServiceGetInputArtifactByUIDWithHttpInfo(String uid, String nodeId, String artifactName) throws ApiException {
-        okhttp3.Call localVarCall = artifactServiceGetInputArtifactByUIDValidateBeforeCall(uid, nodeId, artifactName, null);
+    public ApiResponse<File> artifactServiceGetInputArtifactByUIDWithHttpInfo(String namespace, String uid, String nodeId, String artifactName) throws ApiException {
+        okhttp3.Call localVarCall = artifactServiceGetInputArtifactByUIDValidateBeforeCall(namespace, uid, nodeId, artifactName, null);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -480,6 +320,7 @@ public class ArtifactServiceApi {
     /**
      * Get an input artifact by UID. (asynchronously)
      * 
+     * @param namespace  (required)
      * @param uid  (required)
      * @param nodeId  (required)
      * @param artifactName  (required)
@@ -493,9 +334,9 @@ public class ArtifactServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call artifactServiceGetInputArtifactByUIDAsync(String uid, String nodeId, String artifactName, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call artifactServiceGetInputArtifactByUIDAsync(String namespace, String uid, String nodeId, String artifactName, final ApiCallback<File> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = artifactServiceGetInputArtifactByUIDValidateBeforeCall(uid, nodeId, artifactName, _callback);
+        okhttp3.Call localVarCall = artifactServiceGetInputArtifactByUIDValidateBeforeCall(namespace, uid, nodeId, artifactName, _callback);
         Type localVarReturnType = new TypeToken<File>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -722,7 +563,6 @@ public class ArtifactServiceApi {
      * @param uid  (required)
      * @param nodeId  (required)
      * @param artifactName  (required)
-     * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -731,9 +571,8 @@ public class ArtifactServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public File artifactServiceGetOutputArtifactByUID(String uid, String nodeId, String artifactName) throws ApiException {
-        ApiResponse<File> localVarResp = artifactServiceGetOutputArtifactByUIDWithHttpInfo(uid, nodeId, artifactName);
-        return localVarResp.getData();
+    public void artifactServiceGetOutputArtifactByUID(String uid, String nodeId, String artifactName) throws ApiException {
+        artifactServiceGetOutputArtifactByUIDWithHttpInfo(uid, nodeId, artifactName);
     }
 
     /**
@@ -742,7 +581,7 @@ public class ArtifactServiceApi {
      * @param uid  (required)
      * @param nodeId  (required)
      * @param artifactName  (required)
-     * @return ApiResponse&lt;File&gt;
+     * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -751,10 +590,9 @@ public class ArtifactServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<File> artifactServiceGetOutputArtifactByUIDWithHttpInfo(String uid, String nodeId, String artifactName) throws ApiException {
+    public ApiResponse<Void> artifactServiceGetOutputArtifactByUIDWithHttpInfo(String uid, String nodeId, String artifactName) throws ApiException {
         okhttp3.Call localVarCall = artifactServiceGetOutputArtifactByUIDValidateBeforeCall(uid, nodeId, artifactName, null);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
+        return localVarApiClient.execute(localVarCall);
     }
 
     /**
@@ -773,11 +611,10 @@ public class ArtifactServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call artifactServiceGetOutputArtifactByUIDAsync(String uid, String nodeId, String artifactName, final ApiCallback<File> _callback) throws ApiException {
+    public okhttp3.Call artifactServiceGetOutputArtifactByUIDAsync(String uid, String nodeId, String artifactName, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = artifactServiceGetOutputArtifactByUIDValidateBeforeCall(uid, nodeId, artifactName, _callback);
-        Type localVarReturnType = new TypeToken<File>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
 }

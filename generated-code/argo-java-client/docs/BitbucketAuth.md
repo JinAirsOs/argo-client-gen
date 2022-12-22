@@ -7,7 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **basic** | [**BitbucketBasicAuth**](BitbucketBasicAuth.md) |  |  [optional]
-**oauthToken** | [**V1SecretKeySelector**](V1SecretKeySelector.md) |  |  [optional]
+**token** | [**V1SecretKeySelector**](V1SecretKeySelector.md) |  |  [optional]
 
 
 

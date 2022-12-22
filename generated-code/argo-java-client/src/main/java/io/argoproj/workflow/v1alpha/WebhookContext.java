@@ -41,10 +41,6 @@ public class WebhookContext {
   @SerializedName(SERIALIZED_NAME_ENDPOINT)
   private String endpoint;
 
-  public static final String SERIALIZED_NAME_MAX_PAYLOAD_SIZE = "maxPayloadSize";
-  @SerializedName(SERIALIZED_NAME_MAX_PAYLOAD_SIZE)
-  private String maxPayloadSize;
-
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
   private Map<String, String> metadata = null;
@@ -113,29 +109,6 @@ public class WebhookContext {
 
   public void setEndpoint(String endpoint) {
     this.endpoint = endpoint;
-  }
-
-
-  public WebhookContext maxPayloadSize(String maxPayloadSize) {
-    
-    this.maxPayloadSize = maxPayloadSize;
-    return this;
-  }
-
-   /**
-   * Get maxPayloadSize
-   * @return maxPayloadSize
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getMaxPayloadSize() {
-    return maxPayloadSize;
-  }
-
-
-  public void setMaxPayloadSize(String maxPayloadSize) {
-    this.maxPayloadSize = maxPayloadSize;
   }
 
 
@@ -296,7 +269,6 @@ public class WebhookContext {
     WebhookContext ioArgoprojEventsV1alpha1WebhookContext = (WebhookContext) o;
     return Objects.equals(this.authSecret, ioArgoprojEventsV1alpha1WebhookContext.authSecret) &&
         Objects.equals(this.endpoint, ioArgoprojEventsV1alpha1WebhookContext.endpoint) &&
-        Objects.equals(this.maxPayloadSize, ioArgoprojEventsV1alpha1WebhookContext.maxPayloadSize) &&
         Objects.equals(this.metadata, ioArgoprojEventsV1alpha1WebhookContext.metadata) &&
         Objects.equals(this.method, ioArgoprojEventsV1alpha1WebhookContext.method) &&
         Objects.equals(this.port, ioArgoprojEventsV1alpha1WebhookContext.port) &&
@@ -307,7 +279,7 @@ public class WebhookContext {
 
   @Override
   public int hashCode() {
-    return Objects.hash(authSecret, endpoint, maxPayloadSize, metadata, method, port, serverCertSecret, serverKeySecret, url);
+    return Objects.hash(authSecret, endpoint, metadata, method, port, serverCertSecret, serverKeySecret, url);
   }
 
 
@@ -317,7 +289,6 @@ public class WebhookContext {
     sb.append("class WebhookContext {\n");
     sb.append("    authSecret: ").append(toIndentedString(authSecret)).append("\n");
     sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
-    sb.append("    maxPayloadSize: ").append(toIndentedString(maxPayloadSize)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("    port: ").append(toIndentedString(port)).append("\n");

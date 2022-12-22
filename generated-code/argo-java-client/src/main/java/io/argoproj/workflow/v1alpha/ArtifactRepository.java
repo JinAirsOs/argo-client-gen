@@ -21,7 +21,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.argoproj.workflow.v1alpha.ArtifactoryArtifactRepository;
-import io.argoproj.workflow.v1alpha.AzureArtifactRepository;
 import io.argoproj.workflow.v1alpha.GCSArtifactRepository;
 import io.argoproj.workflow.v1alpha.HDFSArtifactRepository;
 import io.argoproj.workflow.v1alpha.OSSArtifactRepository;
@@ -43,10 +42,6 @@ public class ArtifactRepository {
   public static final String SERIALIZED_NAME_ARTIFACTORY = "artifactory";
   @SerializedName(SERIALIZED_NAME_ARTIFACTORY)
   private ArtifactoryArtifactRepository artifactory;
-
-  public static final String SERIALIZED_NAME_AZURE = "azure";
-  @SerializedName(SERIALIZED_NAME_AZURE)
-  private AzureArtifactRepository azure;
 
   public static final String SERIALIZED_NAME_GCS = "gcs";
   @SerializedName(SERIALIZED_NAME_GCS)
@@ -108,29 +103,6 @@ public class ArtifactRepository {
 
   public void setArtifactory(ArtifactoryArtifactRepository artifactory) {
     this.artifactory = artifactory;
-  }
-
-
-  public ArtifactRepository azure(AzureArtifactRepository azure) {
-    
-    this.azure = azure;
-    return this;
-  }
-
-   /**
-   * Get azure
-   * @return azure
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public AzureArtifactRepository getAzure() {
-    return azure;
-  }
-
-
-  public void setAzure(AzureArtifactRepository azure) {
-    this.azure = azure;
   }
 
 
@@ -237,7 +209,6 @@ public class ArtifactRepository {
     ArtifactRepository ioArgoprojWorkflowV1alpha1ArtifactRepository = (ArtifactRepository) o;
     return Objects.equals(this.archiveLogs, ioArgoprojWorkflowV1alpha1ArtifactRepository.archiveLogs) &&
         Objects.equals(this.artifactory, ioArgoprojWorkflowV1alpha1ArtifactRepository.artifactory) &&
-        Objects.equals(this.azure, ioArgoprojWorkflowV1alpha1ArtifactRepository.azure) &&
         Objects.equals(this.gcs, ioArgoprojWorkflowV1alpha1ArtifactRepository.gcs) &&
         Objects.equals(this.hdfs, ioArgoprojWorkflowV1alpha1ArtifactRepository.hdfs) &&
         Objects.equals(this.oss, ioArgoprojWorkflowV1alpha1ArtifactRepository.oss) &&
@@ -246,7 +217,7 @@ public class ArtifactRepository {
 
   @Override
   public int hashCode() {
-    return Objects.hash(archiveLogs, artifactory, azure, gcs, hdfs, oss, s3);
+    return Objects.hash(archiveLogs, artifactory, gcs, hdfs, oss, s3);
   }
 
 
@@ -256,7 +227,6 @@ public class ArtifactRepository {
     sb.append("class ArtifactRepository {\n");
     sb.append("    archiveLogs: ").append(toIndentedString(archiveLogs)).append("\n");
     sb.append("    artifactory: ").append(toIndentedString(artifactory)).append("\n");
-    sb.append("    azure: ").append(toIndentedString(azure)).append("\n");
     sb.append("    gcs: ").append(toIndentedString(gcs)).append("\n");
     sb.append("    hdfs: ").append(toIndentedString(hdfs)).append("\n");
     sb.append("    oss: ").append(toIndentedString(oss)).append("\n");

@@ -33,10 +33,6 @@ import java.util.List;
  */
 
 public class ArgoWorkflowTrigger {
-  public static final String SERIALIZED_NAME_ARGS = "args";
-  @SerializedName(SERIALIZED_NAME_ARGS)
-  private List<String> args = null;
-
   public static final String SERIALIZED_NAME_OPERATION = "operation";
   @SerializedName(SERIALIZED_NAME_OPERATION)
   private String operation;
@@ -48,37 +44,6 @@ public class ArgoWorkflowTrigger {
   public static final String SERIALIZED_NAME_SOURCE = "source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
   private ArtifactLocation source;
-
-
-  public ArgoWorkflowTrigger args(List<String> args) {
-    
-    this.args = args;
-    return this;
-  }
-
-  public ArgoWorkflowTrigger addArgsItem(String argsItem) {
-    if (this.args == null) {
-      this.args = new ArrayList<String>();
-    }
-    this.args.add(argsItem);
-    return this;
-  }
-
-   /**
-   * Get args
-   * @return args
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public List<String> getArgs() {
-    return args;
-  }
-
-
-  public void setArgs(List<String> args) {
-    this.args = args;
-  }
 
 
   public ArgoWorkflowTrigger operation(String operation) {
@@ -167,15 +132,14 @@ public class ArgoWorkflowTrigger {
       return false;
     }
     ArgoWorkflowTrigger ioArgoprojEventsV1alpha1ArgoWorkflowTrigger = (ArgoWorkflowTrigger) o;
-    return Objects.equals(this.args, ioArgoprojEventsV1alpha1ArgoWorkflowTrigger.args) &&
-        Objects.equals(this.operation, ioArgoprojEventsV1alpha1ArgoWorkflowTrigger.operation) &&
+    return Objects.equals(this.operation, ioArgoprojEventsV1alpha1ArgoWorkflowTrigger.operation) &&
         Objects.equals(this.parameters, ioArgoprojEventsV1alpha1ArgoWorkflowTrigger.parameters) &&
         Objects.equals(this.source, ioArgoprojEventsV1alpha1ArgoWorkflowTrigger.source);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(args, operation, parameters, source);
+    return Objects.hash(operation, parameters, source);
   }
 
 
@@ -183,7 +147,6 @@ public class ArgoWorkflowTrigger {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ArgoWorkflowTrigger {\n");
-    sb.append("    args: ").append(toIndentedString(args)).append("\n");
     sb.append("    operation: ").append(toIndentedString(operation)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");

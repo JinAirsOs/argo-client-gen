@@ -10,12 +10,10 @@ Name | Type | Description | Notes
 **db** | **Integer** |  |  [optional]
 **filter** | [**EventSourceFilter**](EventSourceFilter.md) |  |  [optional]
 **hostAddress** | **String** |  |  [optional]
-**jsonBody** | **Boolean** |  |  [optional]
 **metadata** | **Map&lt;String, String&gt;** |  |  [optional]
 **namespace** | **String** |  |  [optional]
 **password** | [**V1SecretKeySelector**](V1SecretKeySelector.md) |  |  [optional]
 **tls** | [**TLSConfig**](TLSConfig.md) |  |  [optional]
-**username** | **String** |  |  [optional]
 
 
 

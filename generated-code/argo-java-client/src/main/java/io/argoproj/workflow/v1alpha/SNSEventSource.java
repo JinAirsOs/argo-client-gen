@@ -39,10 +39,6 @@ public class SNSEventSource {
   @SerializedName(SERIALIZED_NAME_ACCESS_KEY)
   private V1SecretKeySelector accessKey;
 
-  public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
-  @SerializedName(SERIALIZED_NAME_ENDPOINT)
-  private String endpoint;
-
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
   private EventSourceFilter filter;
@@ -96,29 +92,6 @@ public class SNSEventSource {
 
   public void setAccessKey(V1SecretKeySelector accessKey) {
     this.accessKey = accessKey;
-  }
-
-
-  public SNSEventSource endpoint(String endpoint) {
-    
-    this.endpoint = endpoint;
-    return this;
-  }
-
-   /**
-   * Get endpoint
-   * @return endpoint
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getEndpoint() {
-    return endpoint;
-  }
-
-
-  public void setEndpoint(String endpoint) {
-    this.endpoint = endpoint;
   }
 
 
@@ -324,7 +297,6 @@ public class SNSEventSource {
     }
     SNSEventSource ioArgoprojEventsV1alpha1SNSEventSource = (SNSEventSource) o;
     return Objects.equals(this.accessKey, ioArgoprojEventsV1alpha1SNSEventSource.accessKey) &&
-        Objects.equals(this.endpoint, ioArgoprojEventsV1alpha1SNSEventSource.endpoint) &&
         Objects.equals(this.filter, ioArgoprojEventsV1alpha1SNSEventSource.filter) &&
         Objects.equals(this.metadata, ioArgoprojEventsV1alpha1SNSEventSource.metadata) &&
         Objects.equals(this.region, ioArgoprojEventsV1alpha1SNSEventSource.region) &&
@@ -337,7 +309,7 @@ public class SNSEventSource {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessKey, endpoint, filter, metadata, region, roleARN, secretKey, topicArn, validateSignature, webhook);
+    return Objects.hash(accessKey, filter, metadata, region, roleARN, secretKey, topicArn, validateSignature, webhook);
   }
 
 
@@ -346,7 +318,6 @@ public class SNSEventSource {
     StringBuilder sb = new StringBuilder();
     sb.append("class SNSEventSource {\n");
     sb.append("    accessKey: ").append(toIndentedString(accessKey)).append("\n");
-    sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");

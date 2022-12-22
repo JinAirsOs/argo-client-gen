@@ -38,7 +38,6 @@ import io.argoproj.workflow.v1alpha.NSQEventSource;
 import io.argoproj.workflow.v1alpha.PubSubEventSource;
 import io.argoproj.workflow.v1alpha.PulsarEventSource;
 import io.argoproj.workflow.v1alpha.RedisEventSource;
-import io.argoproj.workflow.v1alpha.RedisStreamEventSource;
 import io.argoproj.workflow.v1alpha.ResourceEventSource;
 import io.argoproj.workflow.v1alpha.S3Artifact;
 import io.argoproj.workflow.v1alpha.SNSEventSource;
@@ -48,7 +47,7 @@ import io.argoproj.workflow.v1alpha.SlackEventSource;
 import io.argoproj.workflow.v1alpha.StorageGridEventSource;
 import io.argoproj.workflow.v1alpha.StripeEventSource;
 import io.argoproj.workflow.v1alpha.Template;
-import io.argoproj.workflow.v1alpha.WebhookEventSource;
+import io.argoproj.workflow.v1alpha.WebhookContext;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -141,10 +140,6 @@ public class EventSourceSpec {
   @SerializedName(SERIALIZED_NAME_REDIS)
   private Map<String, RedisEventSource> redis = null;
 
-  public static final String SERIALIZED_NAME_REDIS_STREAM = "redisStream";
-  @SerializedName(SERIALIZED_NAME_REDIS_STREAM)
-  private Map<String, RedisStreamEventSource> redisStream = null;
-
   public static final String SERIALIZED_NAME_REPLICAS = "replicas";
   @SerializedName(SERIALIZED_NAME_REPLICAS)
   private Integer replicas;
@@ -183,7 +178,7 @@ public class EventSourceSpec {
 
   public static final String SERIALIZED_NAME_WEBHOOK = "webhook";
   @SerializedName(SERIALIZED_NAME_WEBHOOK)
-  private Map<String, WebhookEventSource> webhook = null;
+  private Map<String, WebhookContext> webhook = null;
 
 
   public EventSourceSpec amqp(Map<String, AMQPEventSource> amqp) {
@@ -798,37 +793,6 @@ public class EventSourceSpec {
   }
 
 
-  public EventSourceSpec redisStream(Map<String, RedisStreamEventSource> redisStream) {
-    
-    this.redisStream = redisStream;
-    return this;
-  }
-
-  public EventSourceSpec putRedisStreamItem(String key, RedisStreamEventSource redisStreamItem) {
-    if (this.redisStream == null) {
-      this.redisStream = new HashMap<String, RedisStreamEventSource>();
-    }
-    this.redisStream.put(key, redisStreamItem);
-    return this;
-  }
-
-   /**
-   * Get redisStream
-   * @return redisStream
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Map<String, RedisStreamEventSource> getRedisStream() {
-    return redisStream;
-  }
-
-
-  public void setRedisStream(Map<String, RedisStreamEventSource> redisStream) {
-    this.redisStream = redisStream;
-  }
-
-
   public EventSourceSpec replicas(Integer replicas) {
     
     this.replicas = replicas;
@@ -1084,15 +1048,15 @@ public class EventSourceSpec {
   }
 
 
-  public EventSourceSpec webhook(Map<String, WebhookEventSource> webhook) {
+  public EventSourceSpec webhook(Map<String, WebhookContext> webhook) {
     
     this.webhook = webhook;
     return this;
   }
 
-  public EventSourceSpec putWebhookItem(String key, WebhookEventSource webhookItem) {
+  public EventSourceSpec putWebhookItem(String key, WebhookContext webhookItem) {
     if (this.webhook == null) {
-      this.webhook = new HashMap<String, WebhookEventSource>();
+      this.webhook = new HashMap<String, WebhookContext>();
     }
     this.webhook.put(key, webhookItem);
     return this;
@@ -1105,12 +1069,12 @@ public class EventSourceSpec {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Map<String, WebhookEventSource> getWebhook() {
+  public Map<String, WebhookContext> getWebhook() {
     return webhook;
   }
 
 
-  public void setWebhook(Map<String, WebhookEventSource> webhook) {
+  public void setWebhook(Map<String, WebhookContext> webhook) {
     this.webhook = webhook;
   }
 
@@ -1144,7 +1108,6 @@ public class EventSourceSpec {
         Objects.equals(this.pubSub, ioArgoprojEventsV1alpha1EventSourceSpec.pubSub) &&
         Objects.equals(this.pulsar, ioArgoprojEventsV1alpha1EventSourceSpec.pulsar) &&
         Objects.equals(this.redis, ioArgoprojEventsV1alpha1EventSourceSpec.redis) &&
-        Objects.equals(this.redisStream, ioArgoprojEventsV1alpha1EventSourceSpec.redisStream) &&
         Objects.equals(this.replicas, ioArgoprojEventsV1alpha1EventSourceSpec.replicas) &&
         Objects.equals(this.resource, ioArgoprojEventsV1alpha1EventSourceSpec.resource) &&
         Objects.equals(this.service, ioArgoprojEventsV1alpha1EventSourceSpec.service) &&
@@ -1159,7 +1122,7 @@ public class EventSourceSpec {
 
   @Override
   public int hashCode() {
-    return Objects.hash(amqp, azureEventsHub, bitbucket, bitbucketserver, calendar, emitter, eventBusName, file, generic, github, gitlab, hdfs, kafka, minio, mqtt, nats, nsq, pubSub, pulsar, redis, redisStream, replicas, resource, service, slack, sns, sqs, storageGrid, stripe, template, webhook);
+    return Objects.hash(amqp, azureEventsHub, bitbucket, bitbucketserver, calendar, emitter, eventBusName, file, generic, github, gitlab, hdfs, kafka, minio, mqtt, nats, nsq, pubSub, pulsar, redis, replicas, resource, service, slack, sns, sqs, storageGrid, stripe, template, webhook);
   }
 
 
@@ -1187,7 +1150,6 @@ public class EventSourceSpec {
     sb.append("    pubSub: ").append(toIndentedString(pubSub)).append("\n");
     sb.append("    pulsar: ").append(toIndentedString(pulsar)).append("\n");
     sb.append("    redis: ").append(toIndentedString(redis)).append("\n");
-    sb.append("    redisStream: ").append(toIndentedString(redisStream)).append("\n");
     sb.append("    replicas: ").append(toIndentedString(replicas)).append("\n");
     sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
     sb.append("    service: ").append(toIndentedString(service)).append("\n");

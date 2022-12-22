@@ -26,63 +26,62 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * BasicAuth describes the secret selectors required for basic authentication
+ * BasicAuth
  */
-@ApiModel(description = "BasicAuth describes the secret selectors required for basic authentication")
 
 public class BasicAuth {
-  public static final String SERIALIZED_NAME_PASSWORD_SECRET = "passwordSecret";
-  @SerializedName(SERIALIZED_NAME_PASSWORD_SECRET)
-  private V1SecretKeySelector passwordSecret;
+  public static final String SERIALIZED_NAME_PASSWORD = "password";
+  @SerializedName(SERIALIZED_NAME_PASSWORD)
+  private V1SecretKeySelector password;
 
-  public static final String SERIALIZED_NAME_USERNAME_SECRET = "usernameSecret";
-  @SerializedName(SERIALIZED_NAME_USERNAME_SECRET)
-  private V1SecretKeySelector usernameSecret;
+  public static final String SERIALIZED_NAME_USERNAME = "username";
+  @SerializedName(SERIALIZED_NAME_USERNAME)
+  private V1SecretKeySelector username;
 
 
-  public BasicAuth passwordSecret(V1SecretKeySelector passwordSecret) {
+  public BasicAuth password(V1SecretKeySelector password) {
     
-    this.passwordSecret = passwordSecret;
+    this.password = password;
     return this;
   }
 
    /**
-   * Get passwordSecret
-   * @return passwordSecret
+   * Get password
+   * @return password
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public V1SecretKeySelector getPasswordSecret() {
-    return passwordSecret;
+  public V1SecretKeySelector getPassword() {
+    return password;
   }
 
 
-  public void setPasswordSecret(V1SecretKeySelector passwordSecret) {
-    this.passwordSecret = passwordSecret;
+  public void setPassword(V1SecretKeySelector password) {
+    this.password = password;
   }
 
 
-  public BasicAuth usernameSecret(V1SecretKeySelector usernameSecret) {
+  public BasicAuth username(V1SecretKeySelector username) {
     
-    this.usernameSecret = usernameSecret;
+    this.username = username;
     return this;
   }
 
    /**
-   * Get usernameSecret
-   * @return usernameSecret
+   * Get username
+   * @return username
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public V1SecretKeySelector getUsernameSecret() {
-    return usernameSecret;
+  public V1SecretKeySelector getUsername() {
+    return username;
   }
 
 
-  public void setUsernameSecret(V1SecretKeySelector usernameSecret) {
-    this.usernameSecret = usernameSecret;
+  public void setUsername(V1SecretKeySelector username) {
+    this.username = username;
   }
 
 
@@ -94,14 +93,14 @@ public class BasicAuth {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BasicAuth ioArgoprojWorkflowV1alpha1BasicAuth = (BasicAuth) o;
-    return Objects.equals(this.passwordSecret, ioArgoprojWorkflowV1alpha1BasicAuth.passwordSecret) &&
-        Objects.equals(this.usernameSecret, ioArgoprojWorkflowV1alpha1BasicAuth.usernameSecret);
+    BasicAuth ioArgoprojEventsV1alpha1BasicAuth = (BasicAuth) o;
+    return Objects.equals(this.password, ioArgoprojEventsV1alpha1BasicAuth.password) &&
+        Objects.equals(this.username, ioArgoprojEventsV1alpha1BasicAuth.username);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(passwordSecret, usernameSecret);
+    return Objects.hash(password, username);
   }
 
 
@@ -109,8 +108,8 @@ public class BasicAuth {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class BasicAuth {\n");
-    sb.append("    passwordSecret: ").append(toIndentedString(passwordSecret)).append("\n");
-    sb.append("    usernameSecret: ").append(toIndentedString(usernameSecret)).append("\n");
+    sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("}");
     return sb.toString();
   }

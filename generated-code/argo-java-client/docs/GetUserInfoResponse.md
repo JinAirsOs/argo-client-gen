@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **groups** | **List&lt;String&gt;** |  |  [optional]
 **issuer** | **String** |  |  [optional]
 **serviceAccountName** | **String** |  |  [optional]
-**serviceAccountNamespace** | **String** |  |  [optional]
 **subject** | **String** |  |  [optional]
 
 

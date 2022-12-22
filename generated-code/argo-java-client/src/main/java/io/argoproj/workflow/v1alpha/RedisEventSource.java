@@ -52,10 +52,6 @@ public class RedisEventSource {
   @SerializedName(SERIALIZED_NAME_HOST_ADDRESS)
   private String hostAddress;
 
-  public static final String SERIALIZED_NAME_JSON_BODY = "jsonBody";
-  @SerializedName(SERIALIZED_NAME_JSON_BODY)
-  private Boolean jsonBody;
-
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
   private Map<String, String> metadata = null;
@@ -71,10 +67,6 @@ public class RedisEventSource {
   public static final String SERIALIZED_NAME_TLS = "tls";
   @SerializedName(SERIALIZED_NAME_TLS)
   private TLSConfig tls;
-
-  public static final String SERIALIZED_NAME_USERNAME = "username";
-  @SerializedName(SERIALIZED_NAME_USERNAME)
-  private String username;
 
 
   public RedisEventSource channels(List<String> channels) {
@@ -174,29 +166,6 @@ public class RedisEventSource {
 
   public void setHostAddress(String hostAddress) {
     this.hostAddress = hostAddress;
-  }
-
-
-  public RedisEventSource jsonBody(Boolean jsonBody) {
-    
-    this.jsonBody = jsonBody;
-    return this;
-  }
-
-   /**
-   * Get jsonBody
-   * @return jsonBody
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getJsonBody() {
-    return jsonBody;
-  }
-
-
-  public void setJsonBody(Boolean jsonBody) {
-    this.jsonBody = jsonBody;
   }
 
 
@@ -300,29 +269,6 @@ public class RedisEventSource {
   }
 
 
-  public RedisEventSource username(String username) {
-    
-    this.username = username;
-    return this;
-  }
-
-   /**
-   * Get username
-   * @return username
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getUsername() {
-    return username;
-  }
-
-
-  public void setUsername(String username) {
-    this.username = username;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -336,17 +282,15 @@ public class RedisEventSource {
         Objects.equals(this.db, ioArgoprojEventsV1alpha1RedisEventSource.db) &&
         Objects.equals(this.filter, ioArgoprojEventsV1alpha1RedisEventSource.filter) &&
         Objects.equals(this.hostAddress, ioArgoprojEventsV1alpha1RedisEventSource.hostAddress) &&
-        Objects.equals(this.jsonBody, ioArgoprojEventsV1alpha1RedisEventSource.jsonBody) &&
         Objects.equals(this.metadata, ioArgoprojEventsV1alpha1RedisEventSource.metadata) &&
         Objects.equals(this.namespace, ioArgoprojEventsV1alpha1RedisEventSource.namespace) &&
         Objects.equals(this.password, ioArgoprojEventsV1alpha1RedisEventSource.password) &&
-        Objects.equals(this.tls, ioArgoprojEventsV1alpha1RedisEventSource.tls) &&
-        Objects.equals(this.username, ioArgoprojEventsV1alpha1RedisEventSource.username);
+        Objects.equals(this.tls, ioArgoprojEventsV1alpha1RedisEventSource.tls);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(channels, db, filter, hostAddress, jsonBody, metadata, namespace, password, tls, username);
+    return Objects.hash(channels, db, filter, hostAddress, metadata, namespace, password, tls);
   }
 
 
@@ -358,12 +302,10 @@ public class RedisEventSource {
     sb.append("    db: ").append(toIndentedString(db)).append("\n");
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    hostAddress: ").append(toIndentedString(hostAddress)).append("\n");
-    sb.append("    jsonBody: ").append(toIndentedString(jsonBody)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    tls: ").append(toIndentedString(tls)).append("\n");
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("}");
     return sb.toString();
   }

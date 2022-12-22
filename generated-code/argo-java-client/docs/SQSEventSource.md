@@ -17,7 +17,6 @@ Name | Type | Description | Notes
 **region** | **String** |  |  [optional]
 **roleARN** | **String** |  |  [optional]
 **secretKey** | [**V1SecretKeySelector**](V1SecretKeySelector.md) |  |  [optional]
-**sessionToken** | [**V1SecretKeySelector**](V1SecretKeySelector.md) |  |  [optional]
 **waitTimeSeconds** | **String** | WaitTimeSeconds is The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. |  [optional]
 
 

@@ -203,7 +203,6 @@ public class WorkflowServiceApi {
      * @param deleteOptionsOrphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. +optional. (optional)
      * @param deleteOptionsPropagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. +optional. (optional)
      * @param deleteOptionsDryRun When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed +optional. (optional)
-     * @param force  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -214,7 +213,7 @@ public class WorkflowServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call workflowServiceDeleteWorkflowCall(String namespace, String name, String deleteOptionsGracePeriodSeconds, String deleteOptionsPreconditionsUid, String deleteOptionsPreconditionsResourceVersion, Boolean deleteOptionsOrphanDependents, String deleteOptionsPropagationPolicy, List<String> deleteOptionsDryRun, Boolean force, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call workflowServiceDeleteWorkflowCall(String namespace, String name, String deleteOptionsGracePeriodSeconds, String deleteOptionsPreconditionsUid, String deleteOptionsPreconditionsResourceVersion, Boolean deleteOptionsOrphanDependents, String deleteOptionsPropagationPolicy, List<String> deleteOptionsDryRun, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -248,10 +247,6 @@ public class WorkflowServiceApi {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "deleteOptions.dryRun", deleteOptionsDryRun));
         }
 
-        if (force != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("force", force));
-        }
-
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -274,7 +269,7 @@ public class WorkflowServiceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call workflowServiceDeleteWorkflowValidateBeforeCall(String namespace, String name, String deleteOptionsGracePeriodSeconds, String deleteOptionsPreconditionsUid, String deleteOptionsPreconditionsResourceVersion, Boolean deleteOptionsOrphanDependents, String deleteOptionsPropagationPolicy, List<String> deleteOptionsDryRun, Boolean force, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call workflowServiceDeleteWorkflowValidateBeforeCall(String namespace, String name, String deleteOptionsGracePeriodSeconds, String deleteOptionsPreconditionsUid, String deleteOptionsPreconditionsResourceVersion, Boolean deleteOptionsOrphanDependents, String deleteOptionsPropagationPolicy, List<String> deleteOptionsDryRun, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'namespace' is set
         if (namespace == null) {
@@ -287,7 +282,7 @@ public class WorkflowServiceApi {
         }
         
 
-        okhttp3.Call localVarCall = workflowServiceDeleteWorkflowCall(namespace, name, deleteOptionsGracePeriodSeconds, deleteOptionsPreconditionsUid, deleteOptionsPreconditionsResourceVersion, deleteOptionsOrphanDependents, deleteOptionsPropagationPolicy, deleteOptionsDryRun, force, _callback);
+        okhttp3.Call localVarCall = workflowServiceDeleteWorkflowCall(namespace, name, deleteOptionsGracePeriodSeconds, deleteOptionsPreconditionsUid, deleteOptionsPreconditionsResourceVersion, deleteOptionsOrphanDependents, deleteOptionsPropagationPolicy, deleteOptionsDryRun, _callback);
         return localVarCall;
 
     }
@@ -303,7 +298,6 @@ public class WorkflowServiceApi {
      * @param deleteOptionsOrphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. +optional. (optional)
      * @param deleteOptionsPropagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. +optional. (optional)
      * @param deleteOptionsDryRun When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed +optional. (optional)
-     * @param force  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -313,8 +307,8 @@ public class WorkflowServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public Object workflowServiceDeleteWorkflow(String namespace, String name, String deleteOptionsGracePeriodSeconds, String deleteOptionsPreconditionsUid, String deleteOptionsPreconditionsResourceVersion, Boolean deleteOptionsOrphanDependents, String deleteOptionsPropagationPolicy, List<String> deleteOptionsDryRun, Boolean force) throws ApiException {
-        ApiResponse<Object> localVarResp = workflowServiceDeleteWorkflowWithHttpInfo(namespace, name, deleteOptionsGracePeriodSeconds, deleteOptionsPreconditionsUid, deleteOptionsPreconditionsResourceVersion, deleteOptionsOrphanDependents, deleteOptionsPropagationPolicy, deleteOptionsDryRun, force);
+    public Object workflowServiceDeleteWorkflow(String namespace, String name, String deleteOptionsGracePeriodSeconds, String deleteOptionsPreconditionsUid, String deleteOptionsPreconditionsResourceVersion, Boolean deleteOptionsOrphanDependents, String deleteOptionsPropagationPolicy, List<String> deleteOptionsDryRun) throws ApiException {
+        ApiResponse<Object> localVarResp = workflowServiceDeleteWorkflowWithHttpInfo(namespace, name, deleteOptionsGracePeriodSeconds, deleteOptionsPreconditionsUid, deleteOptionsPreconditionsResourceVersion, deleteOptionsOrphanDependents, deleteOptionsPropagationPolicy, deleteOptionsDryRun);
         return localVarResp.getData();
     }
 
@@ -329,7 +323,6 @@ public class WorkflowServiceApi {
      * @param deleteOptionsOrphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. +optional. (optional)
      * @param deleteOptionsPropagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. +optional. (optional)
      * @param deleteOptionsDryRun When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed +optional. (optional)
-     * @param force  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -339,8 +332,8 @@ public class WorkflowServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> workflowServiceDeleteWorkflowWithHttpInfo(String namespace, String name, String deleteOptionsGracePeriodSeconds, String deleteOptionsPreconditionsUid, String deleteOptionsPreconditionsResourceVersion, Boolean deleteOptionsOrphanDependents, String deleteOptionsPropagationPolicy, List<String> deleteOptionsDryRun, Boolean force) throws ApiException {
-        okhttp3.Call localVarCall = workflowServiceDeleteWorkflowValidateBeforeCall(namespace, name, deleteOptionsGracePeriodSeconds, deleteOptionsPreconditionsUid, deleteOptionsPreconditionsResourceVersion, deleteOptionsOrphanDependents, deleteOptionsPropagationPolicy, deleteOptionsDryRun, force, null);
+    public ApiResponse<Object> workflowServiceDeleteWorkflowWithHttpInfo(String namespace, String name, String deleteOptionsGracePeriodSeconds, String deleteOptionsPreconditionsUid, String deleteOptionsPreconditionsResourceVersion, Boolean deleteOptionsOrphanDependents, String deleteOptionsPropagationPolicy, List<String> deleteOptionsDryRun) throws ApiException {
+        okhttp3.Call localVarCall = workflowServiceDeleteWorkflowValidateBeforeCall(namespace, name, deleteOptionsGracePeriodSeconds, deleteOptionsPreconditionsUid, deleteOptionsPreconditionsResourceVersion, deleteOptionsOrphanDependents, deleteOptionsPropagationPolicy, deleteOptionsDryRun, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -356,7 +349,6 @@ public class WorkflowServiceApi {
      * @param deleteOptionsOrphanDependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. +optional. (optional)
      * @param deleteOptionsPropagationPolicy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. +optional. (optional)
      * @param deleteOptionsDryRun When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed +optional. (optional)
-     * @param force  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -367,9 +359,9 @@ public class WorkflowServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call workflowServiceDeleteWorkflowAsync(String namespace, String name, String deleteOptionsGracePeriodSeconds, String deleteOptionsPreconditionsUid, String deleteOptionsPreconditionsResourceVersion, Boolean deleteOptionsOrphanDependents, String deleteOptionsPropagationPolicy, List<String> deleteOptionsDryRun, Boolean force, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call workflowServiceDeleteWorkflowAsync(String namespace, String name, String deleteOptionsGracePeriodSeconds, String deleteOptionsPreconditionsUid, String deleteOptionsPreconditionsResourceVersion, Boolean deleteOptionsOrphanDependents, String deleteOptionsPropagationPolicy, List<String> deleteOptionsDryRun, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = workflowServiceDeleteWorkflowValidateBeforeCall(namespace, name, deleteOptionsGracePeriodSeconds, deleteOptionsPreconditionsUid, deleteOptionsPreconditionsResourceVersion, deleteOptionsOrphanDependents, deleteOptionsPropagationPolicy, deleteOptionsDryRun, force, _callback);
+        okhttp3.Call localVarCall = workflowServiceDeleteWorkflowValidateBeforeCall(namespace, name, deleteOptionsGracePeriodSeconds, deleteOptionsPreconditionsUid, deleteOptionsPreconditionsResourceVersion, deleteOptionsOrphanDependents, deleteOptionsPropagationPolicy, deleteOptionsDryRun, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

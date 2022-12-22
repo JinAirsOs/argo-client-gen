@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **archiveLogs** | **Boolean** | ArchiveLogs enables log archiving |  [optional]
 **artifactory** | [**ArtifactoryArtifactRepository**](ArtifactoryArtifactRepository.md) |  |  [optional]
-**azure** | [**AzureArtifactRepository**](AzureArtifactRepository.md) |  |  [optional]
 **gcs** | [**GCSArtifactRepository**](GCSArtifactRepository.md) |  |  [optional]
 **hdfs** | [**HDFSArtifactRepository**](HDFSArtifactRepository.md) |  |  [optional]
 **oss** | [**OSSArtifactRepository**](OSSArtifactRepository.md) |  |  [optional]

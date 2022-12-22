@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.argoproj.workflow.v1alpha.ArtGCStatus;
 import io.argoproj.workflow.v1alpha.ArtifactRepositoryRefStatus;
 import io.argoproj.workflow.v1alpha.Condition;
 import io.argoproj.workflow.v1alpha.NodeStatus;
@@ -44,10 +43,6 @@ import org.joda.time.DateTime;
 @ApiModel(description = "WorkflowStatus contains overall status information about a workflow")
 
 public class WorkflowStatus {
-  public static final String SERIALIZED_NAME_ARTIFACT_G_C_STATUS = "artifactGCStatus";
-  @SerializedName(SERIALIZED_NAME_ARTIFACT_G_C_STATUS)
-  private ArtGCStatus artifactGCStatus;
-
   public static final String SERIALIZED_NAME_ARTIFACT_REPOSITORY_REF = "artifactRepositoryRef";
   @SerializedName(SERIALIZED_NAME_ARTIFACT_REPOSITORY_REF)
   private ArtifactRepositoryRefStatus artifactRepositoryRef;
@@ -115,29 +110,6 @@ public class WorkflowStatus {
   public static final String SERIALIZED_NAME_SYNCHRONIZATION = "synchronization";
   @SerializedName(SERIALIZED_NAME_SYNCHRONIZATION)
   private SynchronizationStatus synchronization;
-
-
-  public WorkflowStatus artifactGCStatus(ArtGCStatus artifactGCStatus) {
-    
-    this.artifactGCStatus = artifactGCStatus;
-    return this;
-  }
-
-   /**
-   * Get artifactGCStatus
-   * @return artifactGCStatus
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public ArtGCStatus getArtifactGCStatus() {
-    return artifactGCStatus;
-  }
-
-
-  public void setArtifactGCStatus(ArtGCStatus artifactGCStatus) {
-    this.artifactGCStatus = artifactGCStatus;
-  }
 
 
   public WorkflowStatus artifactRepositoryRef(ArtifactRepositoryRefStatus artifactRepositoryRef) {
@@ -580,8 +552,7 @@ public class WorkflowStatus {
       return false;
     }
     WorkflowStatus ioArgoprojWorkflowV1alpha1WorkflowStatus = (WorkflowStatus) o;
-    return Objects.equals(this.artifactGCStatus, ioArgoprojWorkflowV1alpha1WorkflowStatus.artifactGCStatus) &&
-        Objects.equals(this.artifactRepositoryRef, ioArgoprojWorkflowV1alpha1WorkflowStatus.artifactRepositoryRef) &&
+    return Objects.equals(this.artifactRepositoryRef, ioArgoprojWorkflowV1alpha1WorkflowStatus.artifactRepositoryRef) &&
         Objects.equals(this.compressedNodes, ioArgoprojWorkflowV1alpha1WorkflowStatus.compressedNodes) &&
         Objects.equals(this.conditions, ioArgoprojWorkflowV1alpha1WorkflowStatus.conditions) &&
         Objects.equals(this.estimatedDuration, ioArgoprojWorkflowV1alpha1WorkflowStatus.estimatedDuration) &&
@@ -602,7 +573,7 @@ public class WorkflowStatus {
 
   @Override
   public int hashCode() {
-    return Objects.hash(artifactGCStatus, artifactRepositoryRef, compressedNodes, conditions, estimatedDuration, finishedAt, message, nodes, offloadNodeStatusVersion, outputs, persistentVolumeClaims, phase, progress, resourcesDuration, startedAt, storedTemplates, storedWorkflowTemplateSpec, synchronization);
+    return Objects.hash(artifactRepositoryRef, compressedNodes, conditions, estimatedDuration, finishedAt, message, nodes, offloadNodeStatusVersion, outputs, persistentVolumeClaims, phase, progress, resourcesDuration, startedAt, storedTemplates, storedWorkflowTemplateSpec, synchronization);
   }
 
 
@@ -610,7 +581,6 @@ public class WorkflowStatus {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WorkflowStatus {\n");
-    sb.append("    artifactGCStatus: ").append(toIndentedString(artifactGCStatus)).append("\n");
     sb.append("    artifactRepositoryRef: ").append(toIndentedString(artifactRepositoryRef)).append("\n");
     sb.append("    compressedNodes: ").append(toIndentedString(compressedNodes)).append("\n");
     sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");

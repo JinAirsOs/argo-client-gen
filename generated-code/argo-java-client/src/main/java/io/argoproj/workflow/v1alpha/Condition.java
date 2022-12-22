@@ -23,15 +23,29 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.joda.time.DateTime;
 
 /**
- * Condition
+ * Condition contains details for one aspect of the current state of this API Resource.
  */
+@ApiModel(description = "Condition contains details for one aspect of the current state of this API Resource.")
 
 public class Condition {
+  public static final String SERIALIZED_NAME_LAST_TRANSITION_TIME = "lastTransitionTime";
+  @SerializedName(SERIALIZED_NAME_LAST_TRANSITION_TIME)
+  private DateTime lastTransitionTime;
+
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
   private String message;
+
+  public static final String SERIALIZED_NAME_OBSERVED_GENERATION = "observedGeneration";
+  @SerializedName(SERIALIZED_NAME_OBSERVED_GENERATION)
+  private Integer observedGeneration;
+
+  public static final String SERIALIZED_NAME_REASON = "reason";
+  @SerializedName(SERIALIZED_NAME_REASON)
+  private String reason;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -42,6 +56,28 @@ public class Condition {
   private String type;
 
 
+  public Condition lastTransitionTime(DateTime lastTransitionTime) {
+    
+    this.lastTransitionTime = lastTransitionTime;
+    return this;
+  }
+
+   /**
+   * Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
+   * @return lastTransitionTime
+  **/
+  @ApiModelProperty(required = true, value = "Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.")
+
+  public DateTime getLastTransitionTime() {
+    return lastTransitionTime;
+  }
+
+
+  public void setLastTransitionTime(DateTime lastTransitionTime) {
+    this.lastTransitionTime = lastTransitionTime;
+  }
+
+
   public Condition message(String message) {
     
     this.message = message;
@@ -49,11 +85,10 @@ public class Condition {
   }
 
    /**
-   * Message is the condition message
+   * message is a human readable message indicating details about the transition. This may be an empty string.
    * @return message
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Message is the condition message")
+  @ApiModelProperty(required = true, value = "message is a human readable message indicating details about the transition. This may be an empty string.")
 
   public String getMessage() {
     return message;
@@ -65,6 +100,51 @@ public class Condition {
   }
 
 
+  public Condition observedGeneration(Integer observedGeneration) {
+    
+    this.observedGeneration = observedGeneration;
+    return this;
+  }
+
+   /**
+   * observedGeneration represents the .metadata.generation that the condition was set based upon. For instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date with respect to the current state of the instance.
+   * @return observedGeneration
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "observedGeneration represents the .metadata.generation that the condition was set based upon. For instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date with respect to the current state of the instance.")
+
+  public Integer getObservedGeneration() {
+    return observedGeneration;
+  }
+
+
+  public void setObservedGeneration(Integer observedGeneration) {
+    this.observedGeneration = observedGeneration;
+  }
+
+
+  public Condition reason(String reason) {
+    
+    this.reason = reason;
+    return this;
+  }
+
+   /**
+   * reason contains a programmatic identifier indicating the reason for the condition&#39;s last transition. Producers of specific condition types may define expected values and meanings for this field, and whether the values are considered a guaranteed API. The value should be a CamelCase string. This field may not be empty.
+   * @return reason
+  **/
+  @ApiModelProperty(required = true, value = "reason contains a programmatic identifier indicating the reason for the condition's last transition. Producers of specific condition types may define expected values and meanings for this field, and whether the values are considered a guaranteed API. The value should be a CamelCase string. This field may not be empty.")
+
+  public String getReason() {
+    return reason;
+  }
+
+
+  public void setReason(String reason) {
+    this.reason = reason;
+  }
+
+
   public Condition status(String status) {
     
     this.status = status;
@@ -72,11 +152,10 @@ public class Condition {
   }
 
    /**
-   * Status is the status of the condition
+   * status of the condition, one of True, False, Unknown.
    * @return status
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Status is the status of the condition")
+  @ApiModelProperty(required = true, value = "status of the condition, one of True, False, Unknown.")
 
   public String getStatus() {
     return status;
@@ -95,11 +174,10 @@ public class Condition {
   }
 
    /**
-   * Type is the type of condition
+   * type of condition in CamelCase or in foo.example.com/CamelCase.
    * @return type
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Type is the type of condition")
+  @ApiModelProperty(required = true, value = "type of condition in CamelCase or in foo.example.com/CamelCase.")
 
   public String getType() {
     return type;
@@ -119,15 +197,18 @@ public class Condition {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Condition ioArgoprojWorkflowV1alpha1Condition = (Condition) o;
-    return Objects.equals(this.message, ioArgoprojWorkflowV1alpha1Condition.message) &&
-        Objects.equals(this.status, ioArgoprojWorkflowV1alpha1Condition.status) &&
-        Objects.equals(this.type, ioArgoprojWorkflowV1alpha1Condition.type);
+    Condition ioK8sApimachineryPkgApisMetaV1Condition = (Condition) o;
+    return Objects.equals(this.lastTransitionTime, ioK8sApimachineryPkgApisMetaV1Condition.lastTransitionTime) &&
+        Objects.equals(this.message, ioK8sApimachineryPkgApisMetaV1Condition.message) &&
+        Objects.equals(this.observedGeneration, ioK8sApimachineryPkgApisMetaV1Condition.observedGeneration) &&
+        Objects.equals(this.reason, ioK8sApimachineryPkgApisMetaV1Condition.reason) &&
+        Objects.equals(this.status, ioK8sApimachineryPkgApisMetaV1Condition.status) &&
+        Objects.equals(this.type, ioK8sApimachineryPkgApisMetaV1Condition.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, status, type);
+    return Objects.hash(lastTransitionTime, message, observedGeneration, reason, status, type);
   }
 
 
@@ -135,7 +216,10 @@ public class Condition {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Condition {\n");
+    sb.append("    lastTransitionTime: ").append(toIndentedString(lastTransitionTime)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    observedGeneration: ").append(toIndentedString(observedGeneration)).append("\n");
+    sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");

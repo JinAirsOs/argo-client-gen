@@ -21,9 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.argoproj.workflow.v1alpha.ArchiveStrategy;
-import io.argoproj.workflow.v1alpha.ArtifactGC;
 import io.argoproj.workflow.v1alpha.ArtifactoryArtifact;
-import io.argoproj.workflow.v1alpha.AzureArtifact;
 import io.argoproj.workflow.v1alpha.GCSArtifact;
 import io.argoproj.workflow.v1alpha.GitArtifact;
 import io.argoproj.workflow.v1alpha.HDFSArtifact;
@@ -49,21 +47,9 @@ public class Artifact {
   @SerializedName(SERIALIZED_NAME_ARCHIVE_LOGS)
   private Boolean archiveLogs;
 
-  public static final String SERIALIZED_NAME_ARTIFACT_G_C = "artifactGC";
-  @SerializedName(SERIALIZED_NAME_ARTIFACT_G_C)
-  private ArtifactGC artifactGC;
-
   public static final String SERIALIZED_NAME_ARTIFACTORY = "artifactory";
   @SerializedName(SERIALIZED_NAME_ARTIFACTORY)
   private ArtifactoryArtifact artifactory;
-
-  public static final String SERIALIZED_NAME_AZURE = "azure";
-  @SerializedName(SERIALIZED_NAME_AZURE)
-  private AzureArtifact azure;
-
-  public static final String SERIALIZED_NAME_DELETED = "deleted";
-  @SerializedName(SERIALIZED_NAME_DELETED)
-  private Boolean deleted;
 
   public static final String SERIALIZED_NAME_FROM = "from";
   @SerializedName(SERIALIZED_NAME_FROM)
@@ -176,29 +162,6 @@ public class Artifact {
   }
 
 
-  public Artifact artifactGC(ArtifactGC artifactGC) {
-    
-    this.artifactGC = artifactGC;
-    return this;
-  }
-
-   /**
-   * Get artifactGC
-   * @return artifactGC
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public ArtifactGC getArtifactGC() {
-    return artifactGC;
-  }
-
-
-  public void setArtifactGC(ArtifactGC artifactGC) {
-    this.artifactGC = artifactGC;
-  }
-
-
   public Artifact artifactory(ArtifactoryArtifact artifactory) {
     
     this.artifactory = artifactory;
@@ -219,52 +182,6 @@ public class Artifact {
 
   public void setArtifactory(ArtifactoryArtifact artifactory) {
     this.artifactory = artifactory;
-  }
-
-
-  public Artifact azure(AzureArtifact azure) {
-    
-    this.azure = azure;
-    return this;
-  }
-
-   /**
-   * Get azure
-   * @return azure
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public AzureArtifact getAzure() {
-    return azure;
-  }
-
-
-  public void setAzure(AzureArtifact azure) {
-    this.azure = azure;
-  }
-
-
-  public Artifact deleted(Boolean deleted) {
-    
-    this.deleted = deleted;
-    return this;
-  }
-
-   /**
-   * Has this been deleted?
-   * @return deleted
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Has this been deleted?")
-
-  public Boolean getDeleted() {
-    return deleted;
-  }
-
-
-  public void setDeleted(Boolean deleted) {
-    this.deleted = deleted;
   }
 
 
@@ -646,10 +563,7 @@ public class Artifact {
     Artifact ioArgoprojWorkflowV1alpha1Artifact = (Artifact) o;
     return Objects.equals(this.archive, ioArgoprojWorkflowV1alpha1Artifact.archive) &&
         Objects.equals(this.archiveLogs, ioArgoprojWorkflowV1alpha1Artifact.archiveLogs) &&
-        Objects.equals(this.artifactGC, ioArgoprojWorkflowV1alpha1Artifact.artifactGC) &&
         Objects.equals(this.artifactory, ioArgoprojWorkflowV1alpha1Artifact.artifactory) &&
-        Objects.equals(this.azure, ioArgoprojWorkflowV1alpha1Artifact.azure) &&
-        Objects.equals(this.deleted, ioArgoprojWorkflowV1alpha1Artifact.deleted) &&
         Objects.equals(this.from, ioArgoprojWorkflowV1alpha1Artifact.from) &&
         Objects.equals(this.fromExpression, ioArgoprojWorkflowV1alpha1Artifact.fromExpression) &&
         Objects.equals(this.gcs, ioArgoprojWorkflowV1alpha1Artifact.gcs) &&
@@ -670,7 +584,7 @@ public class Artifact {
 
   @Override
   public int hashCode() {
-    return Objects.hash(archive, archiveLogs, artifactGC, artifactory, azure, deleted, from, fromExpression, gcs, git, globalName, hdfs, http, mode, name, optional, oss, path, raw, recurseMode, s3, subPath);
+    return Objects.hash(archive, archiveLogs, artifactory, from, fromExpression, gcs, git, globalName, hdfs, http, mode, name, optional, oss, path, raw, recurseMode, s3, subPath);
   }
 
 
@@ -680,10 +594,7 @@ public class Artifact {
     sb.append("class Artifact {\n");
     sb.append("    archive: ").append(toIndentedString(archive)).append("\n");
     sb.append("    archiveLogs: ").append(toIndentedString(archiveLogs)).append("\n");
-    sb.append("    artifactGC: ").append(toIndentedString(artifactGC)).append("\n");
     sb.append("    artifactory: ").append(toIndentedString(artifactory)).append("\n");
-    sb.append("    azure: ").append(toIndentedString(azure)).append("\n");
-    sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    from: ").append(toIndentedString(from)).append("\n");
     sb.append("    fromExpression: ").append(toIndentedString(fromExpression)).append("\n");
     sb.append("    gcs: ").append(toIndentedString(gcs)).append("\n");

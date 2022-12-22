@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **automountServiceAccountToken** | **Boolean** | AutomountServiceAccountToken indicates whether a service account token should be automatically mounted in pods. ServiceAccountName of ExecutorConfig must be specified if this value is false. |  [optional]
 **container** | [**V1Container**](V1Container.md) |  |  [optional]
 **containerSet** | [**ContainerSetTemplate**](ContainerSetTemplate.md) |  |  [optional]
-**daemon** | **Boolean** | Daemon will allow a workflow to proceed to the next step so long as the container reaches readiness |  [optional]
+**daemon** | **Boolean** | Deamon will allow a workflow to proceed to the next step so long as the container reaches readiness |  [optional]
 **dag** | [**DAGTemplate**](DAGTemplate.md) |  |  [optional]
 **data** | [**Data**](Data.md) |  |  [optional]
 **executor** | [**ExecutorConfig**](ExecutorConfig.md) |  |  [optional]

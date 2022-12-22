@@ -23,8 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * WorkflowResubmitRequest
@@ -42,10 +40,6 @@ public class WorkflowResubmitRequest {
   public static final String SERIALIZED_NAME_NAMESPACE = "namespace";
   @SerializedName(SERIALIZED_NAME_NAMESPACE)
   private String namespace;
-
-  public static final String SERIALIZED_NAME_PARAMETERS = "parameters";
-  @SerializedName(SERIALIZED_NAME_PARAMETERS)
-  private List<String> parameters = null;
 
 
   public WorkflowResubmitRequest memoized(Boolean memoized) {
@@ -117,37 +111,6 @@ public class WorkflowResubmitRequest {
   }
 
 
-  public WorkflowResubmitRequest parameters(List<String> parameters) {
-    
-    this.parameters = parameters;
-    return this;
-  }
-
-  public WorkflowResubmitRequest addParametersItem(String parametersItem) {
-    if (this.parameters == null) {
-      this.parameters = new ArrayList<String>();
-    }
-    this.parameters.add(parametersItem);
-    return this;
-  }
-
-   /**
-   * Get parameters
-   * @return parameters
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public List<String> getParameters() {
-    return parameters;
-  }
-
-
-  public void setParameters(List<String> parameters) {
-    this.parameters = parameters;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -159,13 +122,12 @@ public class WorkflowResubmitRequest {
     WorkflowResubmitRequest ioArgoprojWorkflowV1alpha1WorkflowResubmitRequest = (WorkflowResubmitRequest) o;
     return Objects.equals(this.memoized, ioArgoprojWorkflowV1alpha1WorkflowResubmitRequest.memoized) &&
         Objects.equals(this.name, ioArgoprojWorkflowV1alpha1WorkflowResubmitRequest.name) &&
-        Objects.equals(this.namespace, ioArgoprojWorkflowV1alpha1WorkflowResubmitRequest.namespace) &&
-        Objects.equals(this.parameters, ioArgoprojWorkflowV1alpha1WorkflowResubmitRequest.parameters);
+        Objects.equals(this.namespace, ioArgoprojWorkflowV1alpha1WorkflowResubmitRequest.namespace);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(memoized, name, namespace, parameters);
+    return Objects.hash(memoized, name, namespace);
   }
 
 
@@ -176,7 +138,6 @@ public class WorkflowResubmitRequest {
     sb.append("    memoized: ").append(toIndentedString(memoized)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
-    sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
     sb.append("}");
     return sb.toString();
   }

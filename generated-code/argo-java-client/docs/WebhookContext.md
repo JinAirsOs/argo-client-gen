@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **authSecret** | [**V1SecretKeySelector**](V1SecretKeySelector.md) |  |  [optional]
 **endpoint** | **String** |  |  [optional]
-**maxPayloadSize** | **String** |  |  [optional]
 **metadata** | **Map&lt;String, String&gt;** |  |  [optional]
 **method** | **String** |  |  [optional]
 **port** | **String** | Port on which HTTP server is listening for incoming events. |  [optional]

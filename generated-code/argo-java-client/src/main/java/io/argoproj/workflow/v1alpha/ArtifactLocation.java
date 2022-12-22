@@ -21,7 +21,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.argoproj.workflow.v1alpha.ArtifactoryArtifact;
-import io.argoproj.workflow.v1alpha.AzureArtifact;
 import io.argoproj.workflow.v1alpha.GCSArtifact;
 import io.argoproj.workflow.v1alpha.GitArtifact;
 import io.argoproj.workflow.v1alpha.HDFSArtifact;
@@ -46,10 +45,6 @@ public class ArtifactLocation {
   public static final String SERIALIZED_NAME_ARTIFACTORY = "artifactory";
   @SerializedName(SERIALIZED_NAME_ARTIFACTORY)
   private ArtifactoryArtifact artifactory;
-
-  public static final String SERIALIZED_NAME_AZURE = "azure";
-  @SerializedName(SERIALIZED_NAME_AZURE)
-  private AzureArtifact azure;
 
   public static final String SERIALIZED_NAME_GCS = "gcs";
   @SerializedName(SERIALIZED_NAME_GCS)
@@ -123,29 +118,6 @@ public class ArtifactLocation {
 
   public void setArtifactory(ArtifactoryArtifact artifactory) {
     this.artifactory = artifactory;
-  }
-
-
-  public ArtifactLocation azure(AzureArtifact azure) {
-    
-    this.azure = azure;
-    return this;
-  }
-
-   /**
-   * Get azure
-   * @return azure
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public AzureArtifact getAzure() {
-    return azure;
-  }
-
-
-  public void setAzure(AzureArtifact azure) {
-    this.azure = azure;
   }
 
 
@@ -321,7 +293,6 @@ public class ArtifactLocation {
     ArtifactLocation ioArgoprojWorkflowV1alpha1ArtifactLocation = (ArtifactLocation) o;
     return Objects.equals(this.archiveLogs, ioArgoprojWorkflowV1alpha1ArtifactLocation.archiveLogs) &&
         Objects.equals(this.artifactory, ioArgoprojWorkflowV1alpha1ArtifactLocation.artifactory) &&
-        Objects.equals(this.azure, ioArgoprojWorkflowV1alpha1ArtifactLocation.azure) &&
         Objects.equals(this.gcs, ioArgoprojWorkflowV1alpha1ArtifactLocation.gcs) &&
         Objects.equals(this.git, ioArgoprojWorkflowV1alpha1ArtifactLocation.git) &&
         Objects.equals(this.hdfs, ioArgoprojWorkflowV1alpha1ArtifactLocation.hdfs) &&
@@ -333,7 +304,7 @@ public class ArtifactLocation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(archiveLogs, artifactory, azure, gcs, git, hdfs, http, oss, raw, s3);
+    return Objects.hash(archiveLogs, artifactory, gcs, git, hdfs, http, oss, raw, s3);
   }
 
 
@@ -343,7 +314,6 @@ public class ArtifactLocation {
     sb.append("class ArtifactLocation {\n");
     sb.append("    archiveLogs: ").append(toIndentedString(archiveLogs)).append("\n");
     sb.append("    artifactory: ").append(toIndentedString(artifactory)).append("\n");
-    sb.append("    azure: ").append(toIndentedString(azure)).append("\n");
     sb.append("    gcs: ").append(toIndentedString(gcs)).append("\n");
     sb.append("    git: ").append(toIndentedString(git)).append("\n");
     sb.append("    hdfs: ").append(toIndentedString(hdfs)).append("\n");

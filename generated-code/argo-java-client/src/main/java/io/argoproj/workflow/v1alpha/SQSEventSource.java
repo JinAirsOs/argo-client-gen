@@ -78,10 +78,6 @@ public class SQSEventSource {
   @SerializedName(SERIALIZED_NAME_SECRET_KEY)
   private V1SecretKeySelector secretKey;
 
-  public static final String SERIALIZED_NAME_SESSION_TOKEN = "sessionToken";
-  @SerializedName(SERIALIZED_NAME_SESSION_TOKEN)
-  private V1SecretKeySelector sessionToken;
-
   public static final String SERIALIZED_NAME_WAIT_TIME_SECONDS = "waitTimeSeconds";
   @SerializedName(SERIALIZED_NAME_WAIT_TIME_SECONDS)
   private String waitTimeSeconds;
@@ -348,29 +344,6 @@ public class SQSEventSource {
   }
 
 
-  public SQSEventSource sessionToken(V1SecretKeySelector sessionToken) {
-    
-    this.sessionToken = sessionToken;
-    return this;
-  }
-
-   /**
-   * Get sessionToken
-   * @return sessionToken
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public V1SecretKeySelector getSessionToken() {
-    return sessionToken;
-  }
-
-
-  public void setSessionToken(V1SecretKeySelector sessionToken) {
-    this.sessionToken = sessionToken;
-  }
-
-
   public SQSEventSource waitTimeSeconds(String waitTimeSeconds) {
     
     this.waitTimeSeconds = waitTimeSeconds;
@@ -414,13 +387,12 @@ public class SQSEventSource {
         Objects.equals(this.region, ioArgoprojEventsV1alpha1SQSEventSource.region) &&
         Objects.equals(this.roleARN, ioArgoprojEventsV1alpha1SQSEventSource.roleARN) &&
         Objects.equals(this.secretKey, ioArgoprojEventsV1alpha1SQSEventSource.secretKey) &&
-        Objects.equals(this.sessionToken, ioArgoprojEventsV1alpha1SQSEventSource.sessionToken) &&
         Objects.equals(this.waitTimeSeconds, ioArgoprojEventsV1alpha1SQSEventSource.waitTimeSeconds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessKey, dlq, endpoint, filter, jsonBody, metadata, queue, queueAccountId, region, roleARN, secretKey, sessionToken, waitTimeSeconds);
+    return Objects.hash(accessKey, dlq, endpoint, filter, jsonBody, metadata, queue, queueAccountId, region, roleARN, secretKey, waitTimeSeconds);
   }
 
 
@@ -439,7 +411,6 @@ public class SQSEventSource {
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
     sb.append("    roleARN: ").append(toIndentedString(roleARN)).append("\n");
     sb.append("    secretKey: ").append(toIndentedString(secretKey)).append("\n");
-    sb.append("    sessionToken: ").append(toIndentedString(sessionToken)).append("\n");
     sb.append("    waitTimeSeconds: ").append(toIndentedString(waitTimeSeconds)).append("\n");
     sb.append("}");
     return sb.toString();

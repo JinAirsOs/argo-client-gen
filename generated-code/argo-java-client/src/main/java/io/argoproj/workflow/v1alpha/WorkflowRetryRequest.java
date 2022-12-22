@@ -23,8 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * WorkflowRetryRequest
@@ -42,10 +40,6 @@ public class WorkflowRetryRequest {
   public static final String SERIALIZED_NAME_NODE_FIELD_SELECTOR = "nodeFieldSelector";
   @SerializedName(SERIALIZED_NAME_NODE_FIELD_SELECTOR)
   private String nodeFieldSelector;
-
-  public static final String SERIALIZED_NAME_PARAMETERS = "parameters";
-  @SerializedName(SERIALIZED_NAME_PARAMETERS)
-  private List<String> parameters = null;
 
   public static final String SERIALIZED_NAME_RESTART_SUCCESSFUL = "restartSuccessful";
   @SerializedName(SERIALIZED_NAME_RESTART_SUCCESSFUL)
@@ -121,37 +115,6 @@ public class WorkflowRetryRequest {
   }
 
 
-  public WorkflowRetryRequest parameters(List<String> parameters) {
-    
-    this.parameters = parameters;
-    return this;
-  }
-
-  public WorkflowRetryRequest addParametersItem(String parametersItem) {
-    if (this.parameters == null) {
-      this.parameters = new ArrayList<String>();
-    }
-    this.parameters.add(parametersItem);
-    return this;
-  }
-
-   /**
-   * Get parameters
-   * @return parameters
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public List<String> getParameters() {
-    return parameters;
-  }
-
-
-  public void setParameters(List<String> parameters) {
-    this.parameters = parameters;
-  }
-
-
   public WorkflowRetryRequest restartSuccessful(Boolean restartSuccessful) {
     
     this.restartSuccessful = restartSuccessful;
@@ -187,13 +150,12 @@ public class WorkflowRetryRequest {
     return Objects.equals(this.name, ioArgoprojWorkflowV1alpha1WorkflowRetryRequest.name) &&
         Objects.equals(this.namespace, ioArgoprojWorkflowV1alpha1WorkflowRetryRequest.namespace) &&
         Objects.equals(this.nodeFieldSelector, ioArgoprojWorkflowV1alpha1WorkflowRetryRequest.nodeFieldSelector) &&
-        Objects.equals(this.parameters, ioArgoprojWorkflowV1alpha1WorkflowRetryRequest.parameters) &&
         Objects.equals(this.restartSuccessful, ioArgoprojWorkflowV1alpha1WorkflowRetryRequest.restartSuccessful);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, namespace, nodeFieldSelector, parameters, restartSuccessful);
+    return Objects.hash(name, namespace, nodeFieldSelector, restartSuccessful);
   }
 
 
@@ -204,7 +166,6 @@ public class WorkflowRetryRequest {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
     sb.append("    nodeFieldSelector: ").append(toIndentedString(nodeFieldSelector)).append("\n");
-    sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
     sb.append("    restartSuccessful: ").append(toIndentedString(restartSuccessful)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -35,9 +35,9 @@ public class BitbucketAuth {
   @SerializedName(SERIALIZED_NAME_BASIC)
   private BitbucketBasicAuth basic;
 
-  public static final String SERIALIZED_NAME_OAUTH_TOKEN = "oauthToken";
-  @SerializedName(SERIALIZED_NAME_OAUTH_TOKEN)
-  private V1SecretKeySelector oauthToken;
+  public static final String SERIALIZED_NAME_TOKEN = "token";
+  @SerializedName(SERIALIZED_NAME_TOKEN)
+  private V1SecretKeySelector token;
 
 
   public BitbucketAuth basic(BitbucketBasicAuth basic) {
@@ -63,26 +63,26 @@ public class BitbucketAuth {
   }
 
 
-  public BitbucketAuth oauthToken(V1SecretKeySelector oauthToken) {
+  public BitbucketAuth token(V1SecretKeySelector token) {
     
-    this.oauthToken = oauthToken;
+    this.token = token;
     return this;
   }
 
    /**
-   * Get oauthToken
-   * @return oauthToken
+   * Get token
+   * @return token
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public V1SecretKeySelector getOauthToken() {
-    return oauthToken;
+  public V1SecretKeySelector getToken() {
+    return token;
   }
 
 
-  public void setOauthToken(V1SecretKeySelector oauthToken) {
-    this.oauthToken = oauthToken;
+  public void setToken(V1SecretKeySelector token) {
+    this.token = token;
   }
 
 
@@ -96,12 +96,12 @@ public class BitbucketAuth {
     }
     BitbucketAuth ioArgoprojEventsV1alpha1BitbucketAuth = (BitbucketAuth) o;
     return Objects.equals(this.basic, ioArgoprojEventsV1alpha1BitbucketAuth.basic) &&
-        Objects.equals(this.oauthToken, ioArgoprojEventsV1alpha1BitbucketAuth.oauthToken);
+        Objects.equals(this.token, ioArgoprojEventsV1alpha1BitbucketAuth.token);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(basic, oauthToken);
+    return Objects.hash(basic, token);
   }
 
 
@@ -110,7 +110,7 @@ public class BitbucketAuth {
     StringBuilder sb = new StringBuilder();
     sb.append("class BitbucketAuth {\n");
     sb.append("    basic: ").append(toIndentedString(basic)).append("\n");
-    sb.append("    oauthToken: ").append(toIndentedString(oauthToken)).append("\n");
+    sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("}");
     return sb.toString();
   }

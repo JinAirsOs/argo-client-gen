@@ -360,11 +360,11 @@ public class Template {
   }
 
    /**
-   * Daemon will allow a workflow to proceed to the next step so long as the container reaches readiness
+   * Deamon will allow a workflow to proceed to the next step so long as the container reaches readiness
    * @return daemon
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Daemon will allow a workflow to proceed to the next step so long as the container reaches readiness")
+  @ApiModelProperty(value = "Deamon will allow a workflow to proceed to the next step so long as the container reaches readiness")
 
   public Boolean getDaemon() {
     return daemon;

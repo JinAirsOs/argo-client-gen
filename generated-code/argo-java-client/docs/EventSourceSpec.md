@@ -26,7 +26,6 @@ Name | Type | Description | Notes
 **pubSub** | [**Map&lt;String, PubSubEventSource&gt;**](PubSubEventSource.md) |  |  [optional]
 **pulsar** | [**Map&lt;String, PulsarEventSource&gt;**](PulsarEventSource.md) |  |  [optional]
 **redis** | [**Map&lt;String, RedisEventSource&gt;**](RedisEventSource.md) |  |  [optional]
-**redisStream** | [**Map&lt;String, RedisStreamEventSource&gt;**](RedisStreamEventSource.md) |  |  [optional]
 **replicas** | **Integer** |  |  [optional]
 **resource** | [**Map&lt;String, ResourceEventSource&gt;**](ResourceEventSource.md) |  |  [optional]
 **service** | [**Service**](Service.md) |  |  [optional]
@@ -36,7 +35,7 @@ Name | Type | Description | Notes
 **storageGrid** | [**Map&lt;String, StorageGridEventSource&gt;**](StorageGridEventSource.md) |  |  [optional]
 **stripe** | [**Map&lt;String, StripeEventSource&gt;**](StripeEventSource.md) |  |  [optional]
 **template** | [**Template**](Template.md) |  |  [optional]
-**webhook** | [**Map&lt;String, WebhookEventSource&gt;**](WebhookEventSource.md) |  |  [optional]
+**webhook** | [**Map&lt;String, WebhookContext&gt;**](WebhookContext.md) |  |  [optional]
 
 
 
