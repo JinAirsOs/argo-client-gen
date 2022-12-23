@@ -13,45 +13,6 @@
 
 package io.argoproj.workflow.v1alpha;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.argoproj.workflow.v1alpha.AWSElasticBlockStoreVolumeSource;
-import io.argoproj.workflow.v1alpha.AzureDiskVolumeSource;
-import io.argoproj.workflow.v1alpha.AzureFileVolumeSource;
-import io.argoproj.workflow.v1alpha.CSIVolumeSource;
-import io.argoproj.workflow.v1alpha.CephFSVolumeSource;
-import io.argoproj.workflow.v1alpha.CinderVolumeSource;
-import io.argoproj.workflow.v1alpha.ConfigMapVolumeSource;
-import io.argoproj.workflow.v1alpha.DownwardAPIVolumeSource;
-import io.argoproj.workflow.v1alpha.EmptyDirVolumeSource;
-import io.argoproj.workflow.v1alpha.EphemeralVolumeSource;
-import io.argoproj.workflow.v1alpha.FCVolumeSource;
-import io.argoproj.workflow.v1alpha.FlexVolumeSource;
-import io.argoproj.workflow.v1alpha.FlockerVolumeSource;
-import io.argoproj.workflow.v1alpha.GCEPersistentDiskVolumeSource;
-import io.argoproj.workflow.v1alpha.GitRepoVolumeSource;
-import io.argoproj.workflow.v1alpha.GlusterfsVolumeSource;
-import io.argoproj.workflow.v1alpha.HostPathVolumeSource;
-import io.argoproj.workflow.v1alpha.ISCSIVolumeSource;
-import io.argoproj.workflow.v1alpha.NFSVolumeSource;
-import io.argoproj.workflow.v1alpha.PersistentVolumeClaimVolumeSource;
-import io.argoproj.workflow.v1alpha.PhotonPersistentDiskVolumeSource;
-import io.argoproj.workflow.v1alpha.PortworxVolumeSource;
-import io.argoproj.workflow.v1alpha.ProjectedVolumeSource;
-import io.argoproj.workflow.v1alpha.QuobyteVolumeSource;
-import io.argoproj.workflow.v1alpha.RBDVolumeSource;
-import io.argoproj.workflow.v1alpha.ScaleIOVolumeSource;
-import io.argoproj.workflow.v1alpha.SecretVolumeSource;
-import io.argoproj.workflow.v1alpha.StorageOSVolumeSource;
-import io.argoproj.workflow.v1alpha.VsphereVirtualDiskVolumeSource;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 

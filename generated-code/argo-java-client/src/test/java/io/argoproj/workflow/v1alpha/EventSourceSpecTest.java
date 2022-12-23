@@ -13,48 +13,6 @@
 
 package io.argoproj.workflow.v1alpha;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.argoproj.workflow.v1alpha.AMQPEventSource;
-import io.argoproj.workflow.v1alpha.AzureEventsHubEventSource;
-import io.argoproj.workflow.v1alpha.BitbucketEventSource;
-import io.argoproj.workflow.v1alpha.BitbucketServerEventSource;
-import io.argoproj.workflow.v1alpha.CalendarEventSource;
-import io.argoproj.workflow.v1alpha.EmitterEventSource;
-import io.argoproj.workflow.v1alpha.FileEventSource;
-import io.argoproj.workflow.v1alpha.GenericEventSource;
-import io.argoproj.workflow.v1alpha.GithubEventSource;
-import io.argoproj.workflow.v1alpha.GitlabEventSource;
-import io.argoproj.workflow.v1alpha.HDFSEventSource;
-import io.argoproj.workflow.v1alpha.KafkaEventSource;
-import io.argoproj.workflow.v1alpha.MQTTEventSource;
-import io.argoproj.workflow.v1alpha.NATSEventsSource;
-import io.argoproj.workflow.v1alpha.NSQEventSource;
-import io.argoproj.workflow.v1alpha.PubSubEventSource;
-import io.argoproj.workflow.v1alpha.PulsarEventSource;
-import io.argoproj.workflow.v1alpha.RedisEventSource;
-import io.argoproj.workflow.v1alpha.RedisStreamEventSource;
-import io.argoproj.workflow.v1alpha.ResourceEventSource;
-import io.argoproj.workflow.v1alpha.S3Artifact;
-import io.argoproj.workflow.v1alpha.SNSEventSource;
-import io.argoproj.workflow.v1alpha.SQSEventSource;
-import io.argoproj.workflow.v1alpha.Service;
-import io.argoproj.workflow.v1alpha.SlackEventSource;
-import io.argoproj.workflow.v1alpha.StorageGridEventSource;
-import io.argoproj.workflow.v1alpha.StripeEventSource;
-import io.argoproj.workflow.v1alpha.Template;
-import io.argoproj.workflow.v1alpha.WebhookEventSource;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 

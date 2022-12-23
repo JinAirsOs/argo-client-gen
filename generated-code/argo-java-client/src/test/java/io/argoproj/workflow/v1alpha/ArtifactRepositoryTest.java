@@ -13,22 +13,6 @@
 
 package io.argoproj.workflow.v1alpha;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.argoproj.workflow.v1alpha.ArtifactoryArtifactRepository;
-import io.argoproj.workflow.v1alpha.AzureArtifactRepository;
-import io.argoproj.workflow.v1alpha.GCSArtifactRepository;
-import io.argoproj.workflow.v1alpha.HDFSArtifactRepository;
-import io.argoproj.workflow.v1alpha.OSSArtifactRepository;
-import io.argoproj.workflow.v1alpha.S3ArtifactRepository;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 

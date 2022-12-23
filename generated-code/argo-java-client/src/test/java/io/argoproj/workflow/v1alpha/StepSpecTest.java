@@ -13,38 +13,6 @@
 
 package io.argoproj.workflow.v1alpha;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.argoproj.workflow.v1alpha.Cat;
-import io.argoproj.workflow.v1alpha.Code;
-import io.argoproj.workflow.v1alpha.Dedupe;
-import io.argoproj.workflow.v1alpha.Expand;
-import io.argoproj.workflow.v1alpha.Filter;
-import io.argoproj.workflow.v1alpha.Flatten;
-import io.argoproj.workflow.v1alpha.Git;
-import io.argoproj.workflow.v1alpha.Group;
-import io.argoproj.workflow.v1alpha.Metadata;
-import io.argoproj.workflow.v1alpha.Scale;
-import io.argoproj.workflow.v1alpha.Sidecar;
-import io.argoproj.workflow.v1alpha.Sink;
-import io.argoproj.workflow.v1alpha.Source;
-import io.kubernetes.client.models.V1Affinity;
-import io.kubernetes.client.models.V1Container;
-import io.kubernetes.client.models.V1LocalObjectReference;
-import io.kubernetes.client.models.V1Toleration;
-import io.kubernetes.client.models.V1Volume;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 
